@@ -1,0 +1,577 @@
+[
+  {
+    "groupname": "main",
+    "id": 1,
+    "uuid": "433b8a76-88c5-11ea-bc55-0242ac1564787485730003",
+    "children": [
+      {
+        "uuid": "433b8a76-88c5-11ea-bc55-0242ac130003",
+        "name": "Dashboard ",
+        "icon": "fa fa-home",
+        "to": "/dashboard",
+        "children": false
+      },
+      {
+        "uuid": "433b8e0e-88c5-11ea-bc55-0242ac130003",
+        "name": "Widgets",
+        "icon": "fa fa-th-large",
+        "to": "#nav-parent",
+        "children": [
+          {
+            "uuid": "ad5e22fc-8937-11ea-bc55-0242ac130003",
+            "name": "Widgets Apps",
+            "icon": false,
+            "to": "/widgets-apps",
+            "children": false
+          },
+          {
+            "uuid": "ad5e254a-8937-11ea-bc55-0242ac130003",
+            "name": "Widgets Data",
+            "icon": false,
+            "to": "/widgets-data",
+            "children": false
+          }
+        ]
+      },
+      {
+        "uuid": "433b95e8-88c5-11ea-bc55-0242ac130003",
+        "name": "Apps",
+        "icon": "fa fa-codepen",
+        "to": "#nav-parent",
+        "children": [
+          {
+            "uuid": "ad5e264e-8937-1158ea-bc55-0242ac130003",
+            "name": "Calendar",
+            "icon": false,
+            "to": "app-calendar",
+            "children": false
+          },
+          {
+            "uuid": "ad5e2720-8937-11ewa-bc55-0242ac130003",
+            "name": "Chat App",
+            "icon": false,
+            "to": "app-chat",
+            "children": false
+          },
+          {
+            "uuid": "ad5e2720-89372-11ea-bc55-0242ac130003",
+            "name": "Support Ticket",
+            "icon": false,
+            "to": "app-ticket",
+            "children": false
+          },
+          {
+            "uuid": "ad5e2720-8937-11ea-bcr55-0242ac130003",
+            "name": "Contact Grid",
+            "icon": false,
+            "to": "app-contact",
+            "children": false
+          },
+          {
+            "uuid": "ad5e2720-89937-11ea-bc55-0242ac130003",
+            "name": "Contact Detail",
+            "icon": false,
+            "to": "app-contact-detail",
+            "children": false
+          }
+        ]
+      },
+      {
+        "uuid": "433b96f6-88c5-11ea-bc55-0242ac130003",
+        "name": "Inbox",
+        "icon": "fa fa-envelope-open",
+        "to": "#nav-parent",
+        "children": [
+          {
+            "uuid": "433ba420-88c5-11ea-bc55-0242ac130003",
+            "name": "Inbox",
+            "icon": false,
+            "to": "/mail-index",
+            "children": false
+          },
+          {
+            "uuid": "433ba420-88c5-11ea-bc55-0242ac130003",
+            "name": "Inbox view",
+            "icon": false,
+            "to": "/mail-view",
+            "children": false
+          },
+          {
+            "uuid": "433ba420-88c5-11ea-bc55-0242ac130003",
+            "name": "Compose",
+            "icon": false,
+            "to": "/mail-compose",
+            "children": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupname": "FORMS, TABLE & LAYOUTS",
+    "id": 2,
+    "uuid": "433b8a76-88c5-11ea-bc55-024DFSAD2ac1564787485730003",
+    "children": [
+      {
+        "uuid": "433b97d2-88c5-11ea-bc55-0242ac130003",
+        "name": "UI elements",
+        "icon": "fa fa-cogs",
+        "to": "#nav-parent",
+        "children": [
+          {
+            "uuid": "dumy-uuid",
+            "name": "Bootstrap UI",
+            "icon": false,
+            "to": "/ui-bootstrap-elements",
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Typography",
+            "icon": false,
+            "to": "/ui-typography",
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Icons",
+            "icon": false,
+            "to": "/ui-icons",
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Buttons",
+            "icon": false,
+            "to": "/ui-buttons",
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Cards",
+            "icon": false,
+            "to": "/ui-cards",
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Tabs",
+            "icon": false,
+            "to": "/ui-tabs",
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Card Master",
+            "icon": false,
+            "to": "/ui-card-master",
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Tooltip & Popovers",
+            "icon": false,
+            "to": "/ui-tip-pop",
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Sweet Alters",
+            "icon": false,
+            "to": "/ui-sweetalerts",
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Modals",
+            "icon": false,
+            "to": "/ui-modals",
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Notification",
+            "icon": false,
+            "to": "/ui-notification",
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Progress",
+            "icon": false,
+            "to": "/ui-progress",
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Grid",
+            "icon": false,
+            "to": "/ui-grid",
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Carousel",
+            "icon": false,
+            "to": "/ui-carousel",
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Range Slider",
+            "icon": false,
+            "to": "/ui-range-slider",
+            "children": false
+          }
+        ]
+      },
+      {
+        "uuid": "433b993a-88c5-11ea-bc55-0242ac130003",
+        "name": "Forms",
+        "icon": "fa fa-file",
+        "to": "#nav-parent",
+        "children": [
+          {
+            "uuid": "demy-uuid",
+            "name": "Basic Elements",
+            "icon": false,
+            "to": "/form-basic",
+            "children": false
+          },
+          {
+            "uuid": "demy-uuid",
+            "name": "Form Validations",
+            "icon": false,
+            "to": "/form-validations",
+            "children": false
+          },
+          {
+            "uuid": "demy-uuid",
+            "name": "Form Masks",
+            "icon": false,
+            "to": "/form-masks",
+            "children": false
+          },
+          {
+            "uuid": "demy-uuid",
+            "name": "Form Picker",
+            "icon": false,
+            "to": "/form-picker",
+            "children": false
+          },
+          {
+            "uuid": "demy-uuid",
+            "name": "Text Editor",
+            "icon": false,
+            "to": "/form-editor",
+            "children": false
+          },
+          {
+            "uuid": "demy-uuid",
+            "name": "File upload",
+            "icon": false,
+            "to": "/form-file-upload",
+            "children": false
+          },
+          {
+            "uuid": "demy-uuid",
+            "name": "Form Wizard",
+            "icon": false,
+            "to": "/form-wizard",
+            "children": false
+          }
+        ]
+      },
+      {
+        "uuid": "433b9a0c-88c5-11ea-bc55-0242ac130003",
+        "name": "Tables",
+        "icon": "fa fa-table",
+        "to": "#nav-parent",
+        "children": [
+          {
+            "uuid": "dumy-uuid",
+            "name": "Basic Tables",
+            "to": "/table-basic",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Data Tables",
+            "to": "/table-data",
+            "icon": false,
+            "children": false
+          }       
+        ]
+      },
+      {
+        "uuid": "433b9bce-88c5-11ea-bc55-0242ac130003",
+        "name": "Charts",
+        "icon": "fa fa-bar-chart",
+        "to": "#nav-parent",
+        "children": [
+          {
+            "uuid": "dumy-uuid",
+            "name": "Apex Chart",
+            "to": "/chart-apex",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Google Chart",
+            "to": "/chart-Google",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Knob Chart",
+            "to": "/chart-Knob",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Chart-js",
+            "to": "/chart-js",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Chartist",
+            "to": "/chart-Chartist",
+            "icon": false,
+            "children": false
+          }
+        ]
+      },
+      {
+        "uuid": "433b9ca0-88c5-11ea-bc55-0242ac130003",
+        "name": "Maps",
+        "icon": "fa fa-map-marker",
+        "to": "#nav-parent",
+        "children": [
+          {
+            "uuid": "dumy-uuid",
+            "name": "Vector map",
+            "to": "/map-vector",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Google map",
+            "to": "/map-google",
+            "icon": false,
+            "children": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupname": "EXAMPLES",
+    "id": 2,
+    "uuid": "433b8a76-8845545c55-0242ac1564787485730003",
+    "children": [
+      {
+        "uuid": "433ba420-88c5-11ea-bc55-0242ac130003",
+        "name": "E-Commerce",
+        "icon": "fa fa-shopping-cart",
+        "to": "#nav-parent",
+        "children": [
+          {
+            "uuid": "dumy-uuid",
+            "name": "Add Product",
+            "to": "/ecommerce-add",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "All Products",
+            "to": "/ecommerce-products",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Orders",
+            "to": "/ecommerce-orders",
+            "icon": false,
+            "children": false
+          }
+        ]
+      },
+      {
+        "uuid": "433b9f48-88c5-11ea-bc55-0242ac130003",
+        "name": "Corporate",
+        "icon": "fa fa-briefcase",
+        "to": "#nav-parent",
+        "children": [
+          {
+            "uuid": "dumy-uuid",
+            "name": "Add Pages",
+            "to": "/corporate-add",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "All Pages",
+            "to": "/corporate-pages",
+            "icon": false,
+            "children": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupname": "OTHERS",
+    "id": 2,
+    "uuid": "433b8a76-88c5-11ea-bc55-02464787485730003",
+    "children": [
+      {
+        "uuid": "433ba1b4-88c5-11ea-bc55-0242ac130003",
+        "name": "Sample Pages",
+        "icon": "fa fa-folder",
+        "to": "#nav-parent",
+        "children": [
+          {
+            "uuid": "dumy-uuid",
+            "name": "Blank Page",
+            "to": "/page-blank",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": 404,
+            "to": "/page-404",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Gallery",
+            "to": "/page-gallery",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Timeline",
+            "to": "/page-timeline",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Invoice",
+            "to": "/page-invoice",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Profile",
+            "to": "/page-profile",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Faqs",
+            "to": "/page-faqs",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Pricing",
+            "to": "/page-pricing",
+            "icon": false,
+            "children": false
+          }
+        ]
+      },
+      {
+        "uuid": "433ba1b4-88c5-11ea-bc55-0242ac154530003",
+        "name": "Auth",
+        "icon": "fa fa-users",
+        "to": "#nav-auth",
+        "children": [
+          {
+            "uuid": "dumy-uuid",
+            "name": "Login",
+            "to": "/auth/login",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Register",
+            "to": "/auth/register",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Forget Password",
+            "to": "/auth/forget-password",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Lock-screen",
+            "to": "/auth/lock-screen",
+            "icon": false,
+            "children": false
+          }
+          
+        ]
+      },
+      {
+        "uuid": "433ba34e-88c5-11ea-bc55-0242ac130003",
+        "name": "Multi Level",
+        "icon": "fa fa-folder-open",
+        "to": "#nav-parent",
+        "children": [
+          {
+            "uuid": "dumy-uuid",
+            "name": "Level 1 ",
+            "to": "/",
+            "icon": false,
+            "children": false
+          },
+          {
+            "uuid": "dumy-uuid",
+            "name": "Level 2",
+            "to": "/",
+            "icon": false,
+            "children": [
+              {
+                "uuid": "dumy-uuid",
+                "name": "Level 2",
+                "to": "/",
+                "icon": false,
+                "children": false
+              },
+              {
+                "uuid": "dumy-uuid",
+                "name": "Level 2",
+                "to": "/",
+                "icon": false,
+                "children": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }  
+]

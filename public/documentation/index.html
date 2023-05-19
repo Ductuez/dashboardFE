@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html class="docs">
+    <head>
+        
+        <!-- Title -->
+        <title>FixedPlus | /documentation</title>
+        
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta charset="UTF-8">
+        <meta name="description" content="Admin Dashboard Template /documentation" />
+        <meta name="keywords" content="admin,dashboard" />
+        
+        <!-- Styles -->
+        <link href='https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900' rel='stylesheet' type='text/css'>
+        <link href="/documentation/assets/plugins/pace-master/themes/blue/pace-theme-flash.css" rel="stylesheet"/>
+        <link href="/documentation/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="/documentation/assets/plugins/fontawesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <link href="/documentation/assets/plugins/google-code-prettify/prettify.css" rel="stylesheet" type="text/css"/>
+        
+        <!-- Theme Styles -->
+        <link href="/documentation/assets/css/docs.css" rel="stylesheet" type="text/css"/>
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        
+    </head>
+    <body class="page-header-fixed page-sidebar-fixed">
+        <div class="page-content">
+            <div class="navbar docs-navbar navbar-fixed-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="sidebar-pusher">
+                                <a href="javascript:void(0);" class="push-sidebar">
+                                    <i class="fa fa-bars"></i>
+                                </a>
+                            </div>
+                            <div class="logo-box">
+                                <span>documentation</span>
+                            </div><!-- Logo Box -->
+                            <div class="top-menu">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li>
+                                        <a href="/demo/" target="_blank">
+                                            <span><i class="fa fa-eye m-r-xs"></i>Demo</span>
+                                        </a>
+                                    </li>
+
+                                </ul><!-- Nav -->
+                            </div><!-- Top Menu -->
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Navbar -->
+            <div class="container docs-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="docs-menu-container">
+                            <div class="page-sidebar sidebar panel panel-white">
+                                <div class="page-sidebar-inner panel-body slimscroll">
+                                    <ul class="menu accordion-menu">
+                                        <li><a href="#overview"><p>Overview</p></a></li>
+                                        <li><a href="#folder"><p>Folder Structure</p></a></li>
+                                        <li><a href="#html"><p>App Structure</p></a></li>
+                                        <li><a href="#custom"><p>Customization</p></a></li>
+                                        <li><a href="#install"><p>Install</p></a></li>
+                                        <li><a href="#fonts"><p>Fonts</p></a></li>
+                                        <li><a href="#colors"><p>Colors</p></a></li>
+                                        <li><a href="#utilities">CSS Utilities</a></li>
+                                        <li><a href="#credits">Sources &amp; Credits</a></li>
+                                    </ul>
+                                </div><!-- Page Sidebar Inner -->
+                            </div><!-- Page Sidebar -->
+                        </div>
+                        <div class="page-inner">
+                            <div id="main-wrapper">
+                                <div class="docs-main-container">
+                                    <div class="panel panel-white" id="overview">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Overview</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>The FixedPlus UI Framework is a premium Web Application Admin Dashboard built on top of <a href="https://reactjs.org/" target="_blank">Reactjs</a>. It was created to be the most functional, clean and well designed theme for any types of backend applications. We have carefully designed all common elements.</p>
+                                            <p>
+We love when all updates are free. Once you’ve purchased FixedPlus, you’ll be able to download all future updates. If you love our theme don’t forget to rate us five stars<i class="fa fa-star icon-state-warning m-l-xs"></i><i class="fa fa-star icon-state-warning"></i><i class="fa fa-star icon-state-warning"></i><i class="fa fa-star icon-state-warning"></i><i class="fa fa-star icon-state-warning m-r-xs"></i>Good rating provides more and better updates in future!</p>
+                                            <hr>
+                                            <p>If you have any questions that are beyond the scope of this help file, please feel free to email via our user page contact form <a href="https://themeforest.net/user/ducor">here</a>. Thanks so much!</p>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-white" id="folder">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Folder Structure</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>List of folders in FixedPlus download</p>
+                                            <pre class="prettyprint">
+Source/
+├── public
+└── src
+├── app
+│   ├── auth
+│   ├── components
+│   │   ├── breadcrumb
+│   │   ├── footer
+│   │   ├── main-sidebar
+│   │   │   └── nav
+│   │   ├── right-sidebar
+│   │   └── topbar
+│   ├── layouts
+│   │   ├── auth-layout
+│   │   └── backend-layout
+│   └── pages
+├── assets
+│   ├── css
+│   ├── img
+│   └── scss
+</pre>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-white" id="html">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">App.jsx</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>Head</p>
+                                            <pre class="prettyprint">
+import React from &#x27;react&#x27;;
+import { BrowserRouter, Route, Switch, Redirect } from &#x27;react-router-dom&#x27;;
+import Layout from &#x27;./layouts&#x27;
+import { ToastContainer } from &#x27;react-toastify&#x27;;
+
+// auth
+import Login from &#x27;./auth/login&#x27;;
+import Register from &#x27;./auth/register&#x27;;
+import ResetPassword from &#x27;./auth/reset-password&#x27;;
+import LockScreen from &#x27;./auth/lockscreen&#x27;;
+
+// //pages
+import Dashboard from &#x27;./pages/dashboard&#x27;;
+//Widgets
+import WidgetsApps from &#x27;./pages/widgets-apps&#x27;;
+import WidgetsData from &#x27;./pages/widgets-data&#x27;;
+// //apps
+import AppCalendar from &#x27;./pages/app-calendar&#x27;;
+import AppChat from &#x27;./pages/app-chat&#x27;;
+import AppTicket from &#x27;./pages/app-ticket&#x27;;
+import AppContact from &#x27;./pages/app-contact&#x27;;
+import AppContactDetail from &#x27;./pages/app-contact-detail&#x27;;
+// //Charts
+import ChartC3 from &#x27;./pages/chart-c3&#x27;;
+import ChartChartjs from &#x27;./pages/chart-chartjs&#x27;;
+import ChartFlot from &#x27;./pages/chart-flot&#x27;;
+import ChartMorris from &#x27;./pages/chart-morris&#x27;;
+import ChartRadial from &#x27;./pages/chart-radial&#x27;;
+import ChartRickshaw from &#x27;./pages/chart-rickshaw&#x27;;
+import ChartSparkline from &#x27;./pages/chart-sparkline&#x27;;
+// new chart
+// Charts 
+import Apexcharts from &#x22;./pages/charts/ApexCharts/Apexcharts&#x22;;
+import GoogleCharts from &#x22;./pages/charts/GoogleCharts/GoogleCharts&#x22;;
+import KnobChart from &#x22;./pages/charts/KnobChart/KnobChart&#x22;;
+import Chartsjs from &#x22;./pages/charts/Chartsjs/Chartsjs&#x22;;
+import Chartist from &#x22;./pages/charts/ChartistCharts/Chartist&#x22;;
+
+// //EXAMPLES
+import CorporateAdd from &#x27;./pages/corporate-add&#x27;;
+import CorporatePages from &#x27;./pages/corporate-pages&#x27;;
+import EcommerceAdd from &#x27;./pages/ecommerce-add&#x27;;
+import EcommerceOrders from &#x27;./pages/ecommerce-orders&#x27;;
+import EcommerceProducts from &#x27;./pages/ecommerce-products&#x27;;
+import ExamplesAddAndUpdate from &#x27;./pages/examples-add-and-update&#x27;;
+import ExamplesDelete from &#x27;./pages/examples-delete&#x27;;
+
+// //form
+import FormBasic from &#x27;./pages/form-basic&#x27;;
+import FormEditor from &#x27;./pages/form-editor&#x27;;
+import FormFileUpload from &#x27;./pages/form-file-upload&#x27;;
+import FormMasks from &#x27;./pages/form-masks&#x27;;
+import FormPicker from &#x27;./pages/form-picker&#x27;;
+import FormValidations from &#x27;./pages/form-validations&#x27;;
+import FormWizard from &#x27;./pages/form-wizard&#x27;;
+import MailCompose from &#x27;./pages/mail-compose&#x27;;
+import MailIndex from &#x27;./pages/mail-index&#x27;;
+import MailView from &#x27;./pages/mail-view&#x27;;
+import MapGoogle from &#x27;./pages/map-google&#x27;;
+import MapVector from &#x27;./pages/map-vector&#x27;;
+
+// //page
+import PageBlank from &#x27;./pages/page-blank&#x27;;
+import PageFaqs from &#x27;./pages/page-faqs&#x27;;
+import PageGallery from &#x27;./pages/page-gallery&#x27;;
+import PageInvoice from &#x27;./pages/page-invoice&#x27;;
+import PagePricing from &#x27;./pages/page-pricing&#x27;;
+import PageProfile from &#x27;./pages/page-profile&#x27;;
+import PageTimeline from &#x27;./pages/page-timeline&#x27;;
+import TableBasic from &#x27;./pages/table-basic&#x27;;
+import DataTables from &#x27;./pages/table-data&#x27;;
+
+// ui element
+import UiBootstrapElements from &#x27;./pages/ui-bootstrap-elements&#x27;;
+import UiAlertify from &#x27;./pages/ui-alertify&#x27;;
+import UiButtons from &#x27;./pages/ui-buttons&#x27;;
+import UiCardMaster from &#x27;./pages/ui-card-master&#x27;;
+import UiCards from &#x27;./pages/ui-cards&#x27;;
+import UiCarousel from &#x27;./pages/ui-carousel&#x27;;
+import UiDraggableCards from &#x27;./pages/ui-draggable-cards&#x27;;
+import UiGrid from &#x27;./pages/ui-grid&#x27;;
+import UiIcons from &#x27;./pages/ui-icons&#x27;;
+import UiJqueryElements from &#x27;./pages/ui-jquery-elements&#x27;;
+import UiModals from &#x27;./pages/ui-modals&#x27;;
+import UiNestable from &#x27;./pages/ui-nestable&#x27;;
+import UiNotification from &#x27;./pages/ui-notification&#x27;;
+import UiProgress from &#x27;./pages/ui-progress&#x27;;
+import UiRangeSlider from &#x27;./pages/ui-range-slider&#x27;;
+import UiSweetalerts from &#x27;./pages/ui-sweetalerts&#x27;;
+import UiTabs from &#x27;./pages/ui-tabs&#x27;;
+import UiTipPop from &#x27;./pages/ui-tip-pop&#x27;;
+import UiTreeview from &#x27;./pages/ui-treeview&#x27;;
+import UiTypography from &#x27;./pages/ui-typography&#x27;;
+
+import Page404 from &#x27;./pages/page-error/page-404&#x27;;
+
+function App() {
+  return (
+      &#x3C;React.Fragment&#x3E;
+
+        &#x3C;BrowserRouter basename={&#x27;/&#x27;} &#x3E;
+          &#x3C;Switch&#x3E;
+          
+          &#x3C;Route exact path=&#x22;/auth&#x22; render={() =&#x3E; (&#x3C;Redirect to=&#x22;/auth/login&#x22; /&#x3E;)} /&#x3E; 
+          &#x3C;Route path={&#x60;/auth/login&#x60;} component={Login} /&#x3E;
+          &#x3C;Route path={&#x60;/auth/register&#x60;} component={Register} /&#x3E;
+          &#x3C;Route path={&#x60;/auth/forget-password&#x60;} component={ResetPassword} /&#x3E;
+          &#x3C;Route path={&#x60;/auth/lock-screen&#x60;} component={LockScreen} /&#x3E;
+
+          &#x3C;Layout name=&#x22;backend&#x22;&#x3E;
+              &#x3C;Route exact path=&#x22;/&#x22; render={() =&#x3E; (&#x3C;Redirect to=&#x22;/dashboard&#x22; /&#x3E;)} /&#x3E;   
+              &#x3C;Route path={&#x60;/dashboard&#x60;} component={Dashboard} /&#x3E;
+            
+              &#x3C;Route path={&#x60;/app-calendar&#x60;} component={AppCalendar} /&#x3E;
+              &#x3C;Route path={&#x60;/app-chat&#x60;} component={AppChat} /&#x3E;
+              &#x3C;Route path={&#x60;/app-contact-detail&#x60;} component={AppContactDetail} /&#x3E;
+              &#x3C;Route path={&#x60;/app-contact&#x60;} component={AppContact} /&#x3E;
+              &#x3C;Route path={&#x60;/app-ticket&#x60;} component={AppTicket} /&#x3E;
+              
+              &#x3C;Route path={&#x60;/chart-c3&#x60;} component={ChartC3} /&#x3E;
+              &#x3C;Route path={&#x60;/chart-chartjs&#x60;} component={ChartChartjs} /&#x3E;
+              &#x3C;Route path={&#x60;/chart-flot&#x60;} component={ChartFlot} /&#x3E;
+              &#x3C;Route path={&#x60;/chart-morris&#x60;} component={ChartMorris} /&#x3E;
+              &#x3C;Route path={&#x60;/chart-radial&#x60;} component={ChartRadial} /&#x3E;
+              &#x3C;Route path={&#x60;/chart-rickshaw&#x60;} component={ChartRickshaw} /&#x3E;
+              &#x3C;Route path={&#x60;/chart-sparkline&#x60;} component={ChartSparkline} /&#x3E;
+
+              &#x3C;Route path={&#x60;/chart-apex&#x60;} component={Apexcharts} /&#x3E;
+              &#x3C;Route path={&#x60;/chart-Google&#x60;} component={GoogleCharts} /&#x3E;
+              &#x3C;Route path={&#x60;/chart-Knob&#x60;} component={KnobChart} /&#x3E;
+              &#x3C;Route path={&#x60;/chart-js&#x60;} component={Chartsjs} /&#x3E;
+              &#x3C;Route path={&#x60;/chart-Chartist&#x60;} component={Chartist} /&#x3E;
+
+              
+
+              &#x3C;Route path={&#x60;/corporate-add&#x60;} component={CorporateAdd} /&#x3E;
+              &#x3C;Route path={&#x60;/corporate-pages&#x60;} component={CorporatePages} /&#x3E;
+
+
+              &#x3C;Route path={&#x60;/ecommerce-add&#x60;} component={EcommerceAdd} /&#x3E;
+              &#x3C;Route path={&#x60;/ecommerce-orders&#x60;} component={EcommerceOrders} /&#x3E;
+              &#x3C;Route path={&#x60;/ecommerce-products&#x60;} component={EcommerceProducts} /&#x3E;
+
+            
+              &#x3C;Route path={&#x60;/examples-add-and-update&#x60;} component={ExamplesAddAndUpdate} /&#x3E;
+              &#x3C;Route path={&#x60;/examples-delete&#x60;} component={ExamplesDelete} /&#x3E;
+              &#x3C;Route path={&#x60;/form-basic&#x60;} component={FormBasic} /&#x3E;
+              &#x3C;Route path={&#x60;/form-editor&#x60;} component={FormEditor} /&#x3E;
+              &#x3C;Route path={&#x60;/form-file-upload&#x60;} component={FormFileUpload} /&#x3E;
+              &#x3C;Route path={&#x60;/form-masks&#x60;} component={FormMasks} /&#x3E;
+              &#x3C;Route path={&#x60;/form-picker&#x60;} component={FormPicker} /&#x3E;
+              &#x3C;Route path={&#x60;/form-validations&#x60;} component={FormValidations} /&#x3E;
+              &#x3C;Route path={&#x60;/form-wizard&#x60;} component={FormWizard} /&#x3E;
+                
+              &#x3C;Route path={&#x60;/mail-compose&#x60;} component={MailCompose} /&#x3E;
+              &#x3C;Route path={&#x60;/mail-index&#x60;} component={MailIndex} /&#x3E;
+              &#x3C;Route path={&#x60;/mail-view&#x60;} component={MailView} /&#x3E;
+              &#x3C;Route path={&#x60;/map-google&#x60;} component={MapGoogle} /&#x3E;
+              &#x3C;Route path={&#x60;/map-vector&#x60;} component={MapVector} /&#x3E;
+
+              &#x3C;Route path={&#x60;/page-blank&#x60;} component={PageBlank} /&#x3E;
+              &#x3C;Route path={&#x60;/page-faqs&#x60;} component={PageFaqs} /&#x3E;           
+              &#x3C;Route path={&#x60;/page-gallery&#x60;} component={PageGallery} /&#x3E;
+              &#x3C;Route path={&#x60;/page-invoice&#x60;} component={PageInvoice} /&#x3E;
+              &#x3C;Route path={&#x60;/page-pricing&#x60;} component={PagePricing} /&#x3E;
+              &#x3C;Route path={&#x60;/page-profile&#x60;} component={PageProfile} /&#x3E;
+              &#x3C;Route path={&#x60;/page-timeline&#x60;} component={PageTimeline} /&#x3E;
+
+              &#x3C;Route path={&#x60;/table-basic&#x60;} component={TableBasic} /&#x3E;
+              &#x3C;Route path={&#x60;/table-data&#x60;} component={DataTables} /&#x3E;
+
+
+              {/* form and ui element */}
+              &#x3C;Route path={&#x60;/ui-bootstrap-elements&#x60;} component={UiBootstrapElements} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-alertify&#x60;} component={UiAlertify} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-buttons&#x60;} component={UiButtons} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-card-master&#x60;} component={UiCardMaster} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-cards&#x60;} component={UiCards} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-carousel&#x60;} component={UiCarousel} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-draggable-cards&#x60;} component={UiDraggableCards} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-grid&#x60;} component={UiGrid} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-icons&#x60;} component={UiIcons} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-jquery-elements&#x60;} component={UiJqueryElements} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-modals&#x60;} component={UiModals} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-nestable&#x60;} component={UiNestable} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-notification&#x60;} component={UiNotification} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-progress&#x60;} component={UiProgress} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-range-slider&#x60;} component={UiRangeSlider} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-sweetalerts&#x60;} component={UiSweetalerts} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-tabs&#x60;} component={UiTabs} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-tip-pop&#x60;} component={UiTipPop} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-treeview&#x60;} component={UiTreeview} /&#x3E;
+              &#x3C;Route path={&#x60;/ui-typography&#x60;} component={UiTypography} /&#x3E;
+              &#x3C;Route path={&#x60;/widgets-apps&#x60;} component={WidgetsApps} /&#x3E;
+              &#x3C;Route path={&#x60;/widgets-data&#x60;} component={WidgetsData} /&#x3E;  
+            &#x3C;/Layout&#x3E;
+          &#x3C;Route path=&#x27;*&#x27; component={ Page404 } /&#x3E;
+        &#x3C;/Switch&#x3E;
+      &#x3C;/BrowserRouter&#x3E;
+      &#x3C;ToastContainer /&#x3E;
+    &#x3C;/React.Fragment&#x3E;
+  );
+}
+
+export default App;
+</pre>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-white" id="custom">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Customization</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>All theme CSS files are located in <code>source/assets/css</code> folder. For your CSS customization you can use <code>source/assets/css/style.css</code>. Keep your custom CSS separate it makes more easier when updating the theme in future.</p>
+                                            <p>Javascript files are located in <code>source/assets/js/</code> folder, plugin files are located in <code>source/assets/lib/</code> folder. For your Javascripts you can use <code>Source/js/custom.js</code>. Keep your custom Javascript separate it makes more easier when updating the theme in future.</p>
+                                        </div>
+                                    </div>
+
+                            <div class="panel panel-white" id="install">
+                                <div class="panel-heading">
+                                    <div class="panel-title">Install</div>
+                                </div>
+                                <div class="panel-body">
+                                    
+                                    <p><a href="https://nodejs.org/en/">Node.js&#39; official website</a></p>
+                                    <p>Select the &quot;Recommended For Most Users&quot; button and download the current version for your operating system.
+                                    </p>
+                                    <p>After you download and install Node, start your terminal/command prompt and run <code>node -v</code> and
+                                        <code>npm -v</code> to see which versions you have.</p>
+                                    <p><img src="/documentation/assets/img/npde-v.png" alt=""></p>
+
+                                    <p>Your version of NPM should be at least 5.2.0 or newer because create-react-app requires that we have <a
+                                            href="https://github.com/npm/npm/releases/tag/v5.2.0">NPX</a> installed. If you have an older version of NPM,
+                                        run this command to update it:</p>
+                                    <pre><code><span class="hljs-built_in">npm</span> install -g <span class="hljs-built_in">npm</span>
+                                    </code></pre>
+                                    <h2 id="what-is-create-react-app-">What is create-react-app?</h2>
+                                    <p>Since it is complicated and takes a lot of time, we don&#39;t want to configure React manually. create-react-app is a
+                                        much easier way which does all the configuration and necessary package installations for us automatically and starts
+                                        a new React app locally, ready for development.</p>
+                                    <p>Another advantage of using create-react-app is that you don&#39;t have to deal with Babel or Webpack configurations.
+                                        All of the necessary configurations will be made by create-react-app for you.</p>
+                                    <p><a href="https://reactjs.org/docs/create-a-new-react-app.html"></a><a
+                                            href="https://reactjs.org/docs/create-a-new-react-app.html">According to the React document</a>ation,
+                                        create-react-app is one of the officially supported ways to create single-page applications in React. You can find
+                                        other ways <a href="https://reactjs.org/docs/create-a-new-react-app.html">here</a>.</p>
+                                    <h3 id="how-to-install-create-react-app">How to Install Create-React-App</h3>
+                                    <p>In order to install your app, first go to your workspace (desktop or a folder) and run the following command:</p>
+                                    <pre><code><span class="hljs-built_in">npm</span> i
+                                    </code></pre>
+                                    <p>The installation process may take a few minutes. After it is done, you should see a folder that appears in your
+                                        workspace with the name you gave to your app.</p>
+                                    <p>and finally run <code>npm start</code> to see your app live on localhost:</p>
+                                    <p><img src="/documentation/assets/img/npm-sert.png" alt=""></p>
+                                    <pre><code><span class="hljs-built_in">npm</span> start
+                                    </code></pre>
+                                    <p>If you see something like this in your browser, you are ready to work with React. Congratulations! :)</p>
+                                    <p>Thank you for reading!</p>
+
+
+                                </div>
+                            </div>
+
+
+                                    <div class="panel panel-white" id="fonts">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Fonts</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>FixedPlus uses Montserrat, Ubuntu and Open Sans fonts. They must be loaded in HTML <code>Head</code> before other CSS files.</p>
+                                            <p>Font code example:</p>
+                                            <pre class="prettify">
+&lt;link href='https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900' rel='stylesheet' type='text/css'&gt;
+</pre>
+                                            <p><b>Fontawesome</b> and <b>Simple Line </b> Font Icon packs. Font Icons must be loaded in HTML <code>Head</code> before theme css files.</p>
+                                        </div>
+                                    </div>
+       
+                                    <div class="panel panel-white" id="colors">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Colors</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>FixedPlus comes with 8 color palettes for creating colorful widgets and elements.</p>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="color-pallete">
+                     
+                                                        <div class="color-item" style="background:#5867dd; color:#fff;">
+                                                            <span>#5867dd</span>
+                                                        </div>
+                                                        <div class="color-item">
+                                                            <code>.bg-primary</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="color-pallete">
+                                           
+                                                        <div class="color-item" style="background:#37BC9B; color:#fff;">
+                                                            <span>#37BC9B</span>
+                                                        </div>
+                                                        <div class="color-item">
+                                                            <code>.bg-success</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="color-pallete">
+                                                        <div class="color-item" style="background:#36a3f7; color:#fff;">
+                                                            <span>#36a3f7</span>
+                                                        </div>
+                                                        <div class="color-item">
+                                                            <code>.bg-info</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="color-pallete">
+
+                                                        <div class="color-item" style="background:#F6BB42; color:#fff;">
+                                                            <span>#F6BB42</span>
+                                                        </div>
+                                                        <div class="color-item">
+                                                            <code>.bg-warning</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="color-pallete">
+                                                        <div class="color-item" style="background:#f4516c ; color:#fff">
+                                                            <span>#f4516c</span>
+                                                        </div>
+                                                        <div class="color-item">
+                                                            <code>.bg-danger</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3"> 
+                                                    <div class="color-pallete">
+                                                        <div class="color-item" style="background:#00c5dc; color:#fff;">
+                                                            <span>#00c5dc</span>
+                                                        </div>
+                                                        <div class="color-item">
+                                                            <code>.bg-teal</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="color-pallete">
+                                                        <div class="color-item" style="background:#967ADC; color:#fff;">
+                                                            <span>#967ADC</span>
+                                                        </div>
+                                                        <div class="color-item">
+                                                            <code>.bg-indigo</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="color-pallete">
+                                                        <div class="color-item" style="background:#fff; color:#404E67">
+                                                            <span>#FFFFFF</span>
+                                                        </div>
+                                                        <div class="color-item">
+                                                            <code>.bg-default</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-white" id="utilities">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Utilities</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>All available Helper Classes in FixedPlus:</p>
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th>Prefix</th>
+                                                            <th>Second Prefix (side)</th>
+                                                            <th>third Prefix</th>
+                                                            <th>Suffix (value)</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Margin</td>
+                                                            <td>m</td>
+                                                            <td>t,r,b,l</td>
+                                                            <td>n (only for negative values)</td>
+                                                            <td>xxs, xs, sm, md, lg, xxl</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Padding</td>
+                                                            <td>p</td>
+                                                            <td>v,h (top &amp; bottom, left &amp; right)</td>
+                                                            <td></td>
+                                                            <td>xxs, xs, sm, md, lg, xxl</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <p><code>.no-s</code> Removes margins &amp; paddings</p>
+                                            <p><code>.no-m</code> Removes margins</p>
+                                            <p><code>.no-p</code> Removes paddings</p>
+                                            <p><code>.no-p-h</code> Removes paddings from left &amp; right</p>
+                                            <p><code>.no-p-v</code> Removes Paddings from top &amp; bottom</p>
+                                            <hr>
+                                            <p><code>.no-b</code> Removes borders</p>
+                                            <p><code>.b</code> Adds border from all sides</p>
+                                            <p><code>.b-t</code>, <code>.b-r</code>, <code>.b-b</code>, <code>.b-l</code> Adds border from top, right, bottom, left</p>
+                                            <p><code>.b-default</code>, <code>.b-primary</code>, <code>.b-success</code>, <code>.b-info</code>, <code>.b-warning</code>, <code>.b-danger</code> Adds border by contextual colors, see <a href="#colors">colors</a> doc.</p>
+                                            <p><code>.b-2</code>, <code>.b-3</code>, <code>.b-4</code> Border size</p>
+                                            <p><code>.b-n-t</code>, <code>.b-n-r</code>, <code>.b-n-b</code>, <code>.b-n-l</code> Removes border from  top, right, bottom, left</p>
+                                            <hr>
+                                            <p><code>.no-r</code> Removes border radius</p>
+                                            <p><code>.r</code> Adds border radius</p>
+                                            <p><code>.r-t-l</code>, <code>.r-t-r</code>, <code>.r-b-l</code>, <code>.r-b-r</code> Adds border radius From top-left, top-right, bottom-left, bottom-right sides.</p>
+                                            <p><code>.no-r-t-l</code>, <code>.no-r-t-r</code>, <code>.no-r-b-l</code>, <code>.no-r-b-r</code> Removes border radius From top-left, top-right, bottom-left, bottom-right sides.</p>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-white" id="credits">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Sources &amp; Credits</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>We've used following sources &amp; credits</p>
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Plugin</th>
+                                                            <th>Official Website</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+														 <tr>
+                                                            <td>Bootstrap</td>
+                                                            <td><a href="#">http://www.getbootstrap.com</a></td>
+                                                        </tr>
+														<tr>
+                                                            <td>Flot charts</td>
+                                                            <td><a href="#">http://www.flotcharts.org/</a></td>
+                                                        </tr>
+														<tr>
+                                                            <td>ChartJs</td>
+                                                            <td><a href="#">http://www.chartjs.org/</a></td>
+                                                        </tr>
+														<tr>
+                                                            <td>FullCalendar</td>
+                                                            <td><a href="https://www.fullcalendar.io/">https://www.fullcalendar.io/</a></td>
+                                                        </tr>
+														<tr>
+                                                            <td>Data Tables</td>
+                                                            <td><a href="https://www.datatables.net/">https://www.datatables.net/</a></td>
+                                                        </tr>
+														<tr>
+                                                            <td>Sweet Alerts2</td>
+                                                            <td><a href="https://limonte.github.io/sweetalert2/">https://limonte.github.io/sweetalert2/</a></td>
+                                                        </tr>
+														
+														<tr>
+                                                            <td>Vector Map</td>
+                                                            <td><a href="https://github.com/bjornd/jvectormap">https://github.com/bjornd/jvectormap</a></td>
+                                                        </tr>
+														<tr>
+                                                            <td>Font-awesome</td>
+                                                            <td><a href="http://fontawesome.io/">http://fontawesome.io/</a></td>
+                                                        </tr>
+														
+														
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <hr>
+                                            <p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page-footer bg-n">
+                                <p class="no-s">Copyright &copy; 2020  FixedPlus.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        
+        
+        <!-- Javascripts -->
+        <script src="/documentation/assets/plugins/jquery/jquery-2.1.4.min.js"></script>
+        <script src="/documentation/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+        <script src="/documentation/assets/plugins/pace-master/pace.min.js"></script>
+        <script src="/documentation/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/documentation/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="/documentation/assets/plugins/google-code-prettify/prettify.js"></script>
+        <script src="/documentation/assets/js/docs.js"></script>
+        
+    </body>
+</html>
