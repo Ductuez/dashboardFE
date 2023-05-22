@@ -1,19 +1,25 @@
-import React from 'react'
-import BackendLayout from './backend-layout';
-import AuthLayout from './auth-layout';
+import React from "react";
+import BackendLayout from "./backend-layout";
+import Login from "../pages/auth/login";
+import { connect } from "react-redux";
 
-export default function Layout (props){
+import { checkLogin } from "../ultils/common";
 
-    let layout = 'backend';
+function Layout(props) {
+  const ktLogin = checkLogin(props.userDetail);
 
-    if( layout === 'auth' )
-        return (<AuthLayout name={layout}>{ props.children }</AuthLayout>)
+  console.log(ktLogin);
 
-    else if( layout === 'backend' )
-        return ( <BackendLayout name={layout}>{ props.children }</BackendLayout>)
-
-    else
-        return (<BackendLayout name={layout}>{ props.children }</BackendLayout>)
-
+  if (!ktLogin) return <Login />;
+  else if (ktLogin) return <BackendLayout>{props.children}</BackendLayout>;
+  else return <BackendLayout>{props.children}</BackendLayout>;
 }
 
+const mapStateToProps = (common) => {
+  console.log(common);
+  return common;
+};
+
+const mapDispatchToProps = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);
