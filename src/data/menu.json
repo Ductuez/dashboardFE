@@ -12,6 +12,13 @@
         "children": false
       },
       {
+        "uuid": "433b8a76-88c5-11ea-bc55-0242ac130203",
+        "name": "Bot tool",
+        "icon": "fa fa-home",
+        "to": "/bot-tool",
+        "children": false
+      },
+      {
         "uuid": "433b8e0e-88c5-11ea-bc55-0242ac130003",
         "name": "Widgets",
         "icon": "fa fa-th-large",

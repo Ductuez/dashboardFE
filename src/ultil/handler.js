@@ -1,4 +1,4 @@
-import Router from "next/router";
+import { Router } from "react-router-dom/cjs/react-router-dom.min";
 
 export const xuLyLogin = (props) => (duLieu) => {
   const { dangNhap, userProfile } = props;
@@ -14,7 +14,13 @@ export const xuLyValidCode = (props) => () => {
   truyCapValidCode();
 };
 
-export const xuLyLoginTk88 = (props) => (duLieu) => {
-  const { truyCapLogintk88 } = props;
+export const xuLyLoginTk88 = (self) => (duLieu) => {
+  const { truyCapLogintk88 } = self.props;
+
   truyCapLogintk88(duLieu);
+};
+
+export const xuLyTaoBot = (self) => (duLieu) => {
+  const { taoBot } = self.props;
+  taoBot({ duLieu });
 };

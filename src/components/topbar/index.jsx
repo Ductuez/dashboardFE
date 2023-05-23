@@ -1,11 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import TopbarUserMessage from "./message";
-import TopbarUserNotification from "./notification";
 import TopbarUserProfile from "./profile";
-import TopbarRightSideBarBtn from "./right-sidebar-btn";
 import RightSidebar from "../right-sidebar";
-import { Container, Row, Col, Form, Button, Image } from "react-bootstrap";
+import { Container, Row, Col, Button, Image } from "react-bootstrap";
 
 class Topbar extends React.Component {
   constructor(props) {
@@ -79,14 +76,6 @@ class Topbar extends React.Component {
                   >
                     <i className='fa fa-bars' />
                   </Button>
-                </div>
-                <div className='search-form hidden-xs'>
-                  <Form>
-                    <Form.Control type='search' placeholder='Search for...' />
-                    <Button type='submit' variant='link' className='btn-search'>
-                      <i className='fa fa-search'></i>
-                    </Button>
-                  </Form>
                 </div>
               </Col>
               <Col>
