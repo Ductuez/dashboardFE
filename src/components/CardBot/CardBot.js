@@ -80,7 +80,7 @@ const CardBot = (props) => {
                 className='m-b'
               >
                 <option value='gapLose'>Tăng khi thua</option>
-                <option value='gapWin'>Tăng khí thắng</option>
+                <option value='gapWin'>Tăng khi thắng</option>
                 <option value='alwayTang'>Luôn luôn tăng</option>
               </Form.Control>
             </Col>

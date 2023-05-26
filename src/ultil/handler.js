@@ -29,30 +29,29 @@ export const xuLyTaoBot = (self) => (duLieu) => {
   const { taoBot, listBot } = self.props;
 
   console.log(duLieu);
-  // taoBot({ duLieu }).then(() => {
-  //   listBot();
-  // });
+
+  taoBot({ duLieu }).then(() => {
+    listBot();
+  });
 };
 
 export const xuLyStartBot = (self) => (duLieu) => {
   const { startBot } = self.props;
   const game = R.pathOr([], ["game"])(duLieu);
 
-  console.log(duLieu);
-
   async function callAPIsSequentially() {
     for (let i = 0; i < game.length; i++) {
       const type = game[i];
 
       try {
-        await startBot({ duLieu, type });
+        await startBot({ duLieu: { ...duLieu, botId: duLieu._id }, type });
       } catch (error) {
         console.error("Lỗi khi gọi API:", error.message);
       }
     }
   }
 
-  // callAPIsSequentially();
+  callAPIsSequentially();
 };
 export const xuLyStopBot = (self) => (duLieu) => {};
 
