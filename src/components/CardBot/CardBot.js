@@ -1,38 +1,60 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col, Card, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import ReactSwitch from "react-switch";
 
 const CardBot = (props) => {
   const { xuLyTaoBot } = props;
-  const { register, handleSubmit } = useForm({
-    defaultValues: {},
-  });
+  const { register, handleSubmit, setValue } = useForm({});
+
+  const [chooseGame, setChooseGame] = useState({});
 
   const checkbox = [
     {
       label: "Xổ số Miền bắc 75s",
       value: "mb75s",
+      valueCL: "CLmb75s",
+      valueTX: "TXmb75s",
+      labelCL: "Chọn Chẳn Lẻ",
+      labelTX: "Chọn Tài Xỉu",
+      active: true,
     },
     {
       label: " Xổ số miền trung 75s",
       value: "mt75s",
+      valueCL: "CLmt75s",
+      valueTX: "TXmt75s",
+      labelCL: "Chọn Chẳn Lẻ",
+      labelTX: "Chọn Tài Xỉu",
     },
     {
       label: "TKXSST1Phut",
       value: "tkxsst1p",
+      valueCL: "CLtkxsst1p",
+      valueTX: "TXtkxsst1p",
+      labelCL: "Chọn Chẳn Lẻ",
+      labelTX: "Chọn Tài Xỉu",
     },
     {
       label: "Xổ số Miền bắc TK 75s",
       value: "mbtk75s",
+      valueCL: "CLmbtk75s",
+      valueTX: "TXmbtk75s",
+      labelCL: "Chọn Chẳn Lẻ",
+      labelTX: "Chọn Tài Xỉu",
     },
   ];
 
   const xuLyNoiBoLogin = (data) => {
-    console.log(data, "datadatadatadatadatadata");
     xuLyTaoBot(data);
   };
+
+  useEffect(() => {
+    setValue("chooseGame", chooseGame);
+  }, [chooseGame]);
+
   return (
-    <Card>
+    <Card className='c-card-bot'>
       <Card.Header>Bot</Card.Header>
       <Card.Body>
         <Form onSubmit={handleSubmit(xuLyNoiBoLogin)}>
@@ -41,27 +63,12 @@ const CardBot = (props) => {
             <Col sm='9'>
               <Form.Control
                 placeholder='Tên bot'
-                name='name_bot'
-                {...register("name_bot")}
+                name='name'
+                {...register("name")}
               />
             </Col>
           </Form.Group>
-          <Form.Group className='row'>
-            <Form.Label className='col-sm-3 '>Quản lý vốn</Form.Label>
-            <Col sm='9'>
-              <Form.Control
-                as='select'
-                name='quanLyVon'
-                className='m-b'
-                {...register("quanLyVon")}
-              >
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-                <option>Option 4</option>
-              </Form.Control>
-            </Col>
-          </Form.Group>
+
           <Form.Group className='row'>
             <Form.Label className='col-sm-3 '>
               Hình thức tăng giá trị
@@ -72,10 +79,9 @@ const CardBot = (props) => {
                 {...register("tangGiaTri")}
                 className='m-b'
               >
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-                <option>Option 4</option>
+                <option value='gapLose'>Tăng khi thua</option>
+                <option value='gapWin'>Tăng khí thắng</option>
+                <option value='alwayTang'>Luôn luôn tăng</option>
               </Form.Control>
             </Col>
           </Form.Group>
@@ -126,27 +132,60 @@ const CardBot = (props) => {
             </Col>
           </Form.Group>
 
-          <Form.Group>
+          <Form.Group className='c-card-bot-xo-so'>
             <Form.Label>Chọn Xổ số</Form.Label>
             <Row>
-              <Col>
-                {checkbox.map((item, index) => {
-                  return (
-                    <div
-                      className='checkbox checkbox-primary margin-r-5'
-                      key={index}
-                    >
-                      <input
-                        id={item.value}
-                        type='checkbox'
-                        value={item.value}
-                        {...register("game")}
+              {checkbox.map((item, index) => {
+                return (
+                  <>
+                    <Col xs={4}>
+                      <div
+                        className='checkbox checkbox-primary margin-r-5'
+                        key={index}
+                      >
+                        <input
+                          id={item.value}
+                          type='checkbox'
+                          value={item.value}
+                          {...register("game")}
+                        />
+                        <Form.Label htmlFor={item.value}>
+                          {item.label}
+                        </Form.Label>
+                      </div>
+                    </Col>
+
+                    <Col xs={4}>
+                      <Form.Label>{item.labelCL}</Form.Label>
+                      <ReactSwitch
+                        checked={chooseGame[item.valueCL]}
+                        onChange={(check) => {
+                          setChooseGame((prevState) => {
+                            return {
+                              ...prevState,
+                              [item.valueCL]: check,
+                            };
+                          });
+                        }}
                       />
-                      <Form.Label htmlFor={item.value}>{item.label}</Form.Label>
-                    </div>
-                  );
-                })}
-              </Col>
+                    </Col>
+                    <Col xs={4}>
+                      <Form.Label>{item.labelTX}</Form.Label>
+                      <ReactSwitch
+                        checked={chooseGame[item.valueTX]}
+                        onChange={(check) => {
+                          setChooseGame((prevState) => {
+                            return {
+                              ...prevState,
+                              [item.valueTX]: check,
+                            };
+                          });
+                        }}
+                      />
+                    </Col>
+                  </>
+                );
+              })}
             </Row>
           </Form.Group>
 

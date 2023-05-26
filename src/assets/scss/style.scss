@@ -50,8 +50,9 @@
 	*   Responsive
 -------------------------------------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css");
 
 @import "variables";
 @import "common";
@@ -59,6 +60,7 @@
 @import "ace-menu";
 @import "horizontal";
 @import "helper";
+
 //layout new
 @import "layout";
 @import "alert";
@@ -107,3 +109,4 @@
 @import "responsive";
 @import "loader";
 @import "settings";
+@import "../../components/CardBot/CardBot";

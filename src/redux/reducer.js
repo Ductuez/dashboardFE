@@ -6,6 +6,8 @@ import { reducer as truyCapLogintk88Reducer } from "./truyCapLogintk88";
 import { reducer as userProfileReducer } from "./userProfile";
 import { reducer as taoBotReducer } from "./taoBot";
 import { reducer as listBotReducer } from "./listBot";
+import { reducer as startBotReducer } from "./startBot";
+import { reducer as choiThuReducer } from "./choiThu";
 
 const reducers = [
   // Chung
@@ -15,6 +17,8 @@ const reducers = [
   userProfileReducer,
   taoBotReducer,
   listBotReducer,
+  startBotReducer,
+  choiThuReducer,
 ];
 
 export default function reducer(state = initialState, action) {

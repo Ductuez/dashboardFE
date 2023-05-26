@@ -6,14 +6,16 @@ import { userProfile } from "../action";
 import { checkLogin } from "../ultils/common";
 
 function Layout(props) {
+  const { userDetail, children } = props;
   useEffect(() => {
-    props.userProfile();
+    const { userProfile } = props;
+    userProfile();
   }, []);
-  const ktLogin = checkLogin(props.userDetail);
+  const ktLogin = checkLogin(userDetail);
 
   if (!ktLogin) return <Login />;
-  else if (ktLogin) return <BackendLayout>{props.children}</BackendLayout>;
-  else return <BackendLayout>{props.children}</BackendLayout>;
+  else if (ktLogin) return <BackendLayout>{children}</BackendLayout>;
+  else return <BackendLayout>{children}</BackendLayout>;
 }
 
 const mapStateToProps = (common) => {

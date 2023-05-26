@@ -10,9 +10,11 @@ import {
   truyCapLogintk88,
   taoBot,
   listBot,
+  startBot,
 } from "../../action";
-import { xuLyTaoBot } from "../../ultil/handler";
+import { xuLyTaoBot, xuLyStartBot, xuLyStopBot } from "../../ultil/handler";
 import CardBot from "../../components/CardBot/CardBot";
+import ListBot from "../../components/ListBot/ListBot";
 
 class BotTool extends React.Component {
   constructor(props) {
@@ -64,11 +66,24 @@ class BotTool extends React.Component {
       xuLyTaoBot: xuLyTaoBot(this),
     };
 
+    const { dsBot } = this.props;
+
+    console.log(this.props);
+
+    const propertiesListBot = {
+      dsBot,
+      xuLyStartBot: xuLyStartBot(this),
+      xuLyStopBot: xuLyStopBot(this),
+    };
+
     return (
       <React.Fragment>
         <Row>
-          <Col md='8'>
+          <Col md='12'>
             <CardBot {...propertiesCardBot} />
+          </Col>
+          <Col md='12'>
+            <ListBot {...propertiesListBot} />
           </Col>
         </Row>
       </React.Fragment>
@@ -86,6 +101,7 @@ const mapDispatchToProps = {
   truyCapLogintk88,
   taoBot,
   listBot,
+  startBot,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BotTool);

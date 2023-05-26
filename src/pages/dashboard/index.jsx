@@ -7,8 +7,13 @@ import * as R from "ramda";
 import C3Chart from "react-c3js";
 import { Events, animateScroll as scroll, scroller } from "react-scroll";
 import { connect } from "react-redux";
-import { truyCapValidCode, userProfile, truyCapLogintk88 } from "../../action";
-import { xuLyLoginTk88 } from "../../ultil/handler";
+import {
+  truyCapValidCode,
+  userProfile,
+  truyCapLogintk88,
+  choiThu,
+} from "../../action";
+import { xuLyLoginTk88, xuLyChoiThu } from "../../ultil/handler";
 
 const donut = {
   columns: [
@@ -306,7 +311,13 @@ class Dashboard extends React.Component {
                       className='btn-sm'
                       onClick={(e) => xuLyNoiBoLogin(e)}
                     >
-                      Sign in
+                      Đăng nhập
+                    </Button>
+                    <Button
+                      className='btn-sm'
+                      onClick={(e) => xuLyChoiThu(this)(e)}
+                    >
+                      Chơi thử
                     </Button>
                   </Form>
                 </Card.Body>
@@ -327,6 +338,7 @@ const mapDispatchToProps = {
   truyCapValidCode,
   userProfile,
   truyCapLogintk88,
+  choiThu,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
