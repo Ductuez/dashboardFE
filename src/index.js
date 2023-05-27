@@ -24,7 +24,6 @@ import BotTool from "./pages/BotTool";
 import WidgetsApps from "./pages/widgets-apps";
 import WidgetsData from "./pages/widgets-data";
 // //apps
-import AppChat from "./pages/app-chat";
 import AppTicket from "./pages/app-ticket";
 import AppContact from "./pages/app-contact";
 import AppContactDetail from "./pages/app-contact-detail";
@@ -109,19 +108,18 @@ ReactDOM.render(
         <Switch>
           <Route
             exact
-            path='/auth'
-            render={() => <Redirect to='/auth/login' />}
+            path="/auth"
+            render={() => <Redirect to="/auth/login" />}
           />
           <Route path={`/auth/login`} component={Login} />
           <Route path={`/auth/register`} component={Register} />
           <Route path={`/auth/forget-password`} component={ResetPassword} />
           <Route path={`/auth/lock-screen`} component={LockScreen} />
-          <Layout name='backend'>
-            <Route exact path='/' render={() => <Redirect to='/dashboard' />} />
+          <Layout name="backend">
+            <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
             <Route path={`/dashboard`} component={Dashboard} />
             <Route path={`/bot-tool`} component={BotTool} />
 
-            <Route path={`/app-chat`} component={AppChat} />
             <Route path={`/app-contact-detail`} component={AppContactDetail} />
             <Route path={`/app-contact`} component={AppContact} />
             <Route path={`/app-ticket`} component={AppTicket} />
@@ -203,7 +201,7 @@ ReactDOM.render(
             <Route path={`/widgets-apps`} component={WidgetsApps} />
             <Route path={`/widgets-data`} component={WidgetsData} />
           </Layout>
-          <Route path='*' component={Page404} />
+          <Route path="*" component={Page404} />
         </Switch>
       </BrowserRouter>
       <ToastContainer />
