@@ -75,7 +75,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "HOST=62.171.169.64 react-scripts eject",
-    "heroku-postbuild": "yarn install && yarn build"
+    "heroku-postbuild": "yarn install --legacy-peer-deps && yarn build"
   },
   "engines": {
     "node": "16.16.0",
