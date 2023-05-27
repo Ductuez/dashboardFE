@@ -2,6 +2,7 @@
   "name": "create-react-app",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@babel/preset-react": "^7.12.10",
     "@fortawesome/fontawesome-free": "^5.15.1",
@@ -30,7 +31,6 @@
     "js-cookie": "^3.0.5",
     "knob": "^1.1.0",
     "moment": "^2.29.4",
-    "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "ramda": "^0.29.0",
     "react": "^17.0.1",
@@ -45,6 +45,7 @@
     "react-dom": "^17.0.1",
     "react-google-charts": "^3.0.15",
     "react-helmet": "^6.1.0",
+    "react-hook-form": "^6.15.1",
     "react-image-lightbox": "^5.1.1",
     "react-infinite-calendar": "^2.3.1",
     "react-input-mask": "^2.0.4",
@@ -78,10 +79,8 @@
     "heroku-postbuild": "yarn install && yarn build"
   },
   "engines": {
-    "node": "16.16.0",
-    "npm": ">=6.0.0"
+    "node": "14.16.0"
   },
-
   "eslintConfig": {
     "extends": "react-app"
   },

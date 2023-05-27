@@ -44,7 +44,6 @@ import Chartsjs from "./pages/charts/Chartsjs/Chartsjs";
 import Chartist from "./pages/charts/ChartistCharts/Chartist";
 
 // //EXAMPLES
-import CorporateAdd from "./pages/corporate-add";
 import CorporatePages from "./pages/corporate-pages";
 import EcommerceOrders from "./pages/ecommerce-orders";
 import EcommerceProducts from "./pages/ecommerce-products";
@@ -107,15 +106,15 @@ ReactDOM.render(
         <Switch>
           <Route
             exact
-            path="/auth"
-            render={() => <Redirect to="/auth/login" />}
+            path='/auth'
+            render={() => <Redirect to='/auth/login' />}
           />
           <Route path={`/auth/login`} component={Login} />
           <Route path={`/auth/register`} component={Register} />
           <Route path={`/auth/forget-password`} component={ResetPassword} />
           <Route path={`/auth/lock-screen`} component={LockScreen} />
-          <Layout name="backend">
-            <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
+          <Layout name='backend'>
+            <Route exact path='/' render={() => <Redirect to='/dashboard' />} />
             <Route path={`/dashboard`} component={Dashboard} />
             <Route path={`/bot-tool`} component={BotTool} />
 
@@ -137,7 +136,6 @@ ReactDOM.render(
             <Route path={`/chart-js`} component={Chartsjs} />
             <Route path={`/chart-Chartist`} component={Chartist} />
 
-            <Route path={`/corporate-add`} component={CorporateAdd} />
             <Route path={`/corporate-pages`} component={CorporatePages} />
 
             <Route path={`/ecommerce-orders`} component={EcommerceOrders} />
@@ -199,7 +197,7 @@ ReactDOM.render(
             <Route path={`/widgets-apps`} component={WidgetsApps} />
             <Route path={`/widgets-data`} component={WidgetsData} />
           </Layout>
-          <Route path="*" component={Page404} />
+          <Route path='*' component={Page404} />
         </Switch>
       </BrowserRouter>
       <ToastContainer />
