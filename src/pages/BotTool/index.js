@@ -11,10 +11,12 @@ import {
   taoBot,
   listBot,
   startBot,
+  listDsBet,
 } from "../../action";
 import { xuLyTaoBot, xuLyStartBot, xuLyStopBot } from "../../ultil/handler";
 import CardBot from "../../components/CardBot/CardBot";
 import ListBot from "../../components/ListBot/ListBot";
+import ListBet from "../../components/ListBet/ListBet";
 
 class BotTool extends React.Component {
   constructor(props) {
@@ -55,9 +57,12 @@ class BotTool extends React.Component {
     );
   }
   componentDidMount() {
-    const { listBot } = this.props;
+    const { listBot, listDsBet } = this.props;
     listBot();
+    listDsBet();
   }
+
+  componentWillUnmount() {}
 
   render() {
     // const { userDetail } = this.props;
@@ -66,7 +71,7 @@ class BotTool extends React.Component {
       xuLyTaoBot: xuLyTaoBot(this),
     };
 
-    const { dsBot } = this.props;
+    const { dsBot, dsBet, listDsBet } = this.props;
 
     console.log(this.props);
 
@@ -76,14 +81,25 @@ class BotTool extends React.Component {
       xuLyStopBot: xuLyStopBot(this),
     };
 
+    const propertiesListBet = {
+      dsBet,
+      listDsBet,
+    };
+
     return (
       <React.Fragment>
         <Row>
-          <Col md='12'>
+          <Col md="12">
             <CardBot {...propertiesCardBot} />
           </Col>
-          <Col md='12'>
+          <Col md="12">
             <ListBot {...propertiesListBot} />
+          </Col>
+
+          <h3>Lịch sử cược</h3>
+
+          <Col md="12">
+            <ListBet {...propertiesListBet} />
           </Col>
         </Row>
       </React.Fragment>
@@ -102,6 +118,7 @@ const mapDispatchToProps = {
   taoBot,
   listBot,
   startBot,
+  listDsBet,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BotTool);

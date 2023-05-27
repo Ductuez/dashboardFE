@@ -5,4 +5,5 @@ export { userProfile } from "../redux/userProfile";
 export { taoBot } from "../redux/taoBot";
 export { listBot } from "../redux/listBot";
 export { startBot } from "../redux/startBot";
+export { listDsBet } from "../redux/listDsBet";
 export { choiThu } from "../redux/choiThu";

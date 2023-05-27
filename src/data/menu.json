@@ -19,6 +19,14 @@
         "children": false
       },
       {
+        "uuid": "dumy-uuid",
+        "name": "Lịch sử cược",
+        "to": "/bet-record",
+        "icon": "fa  fa-newspaper-o",
+
+        "children": false
+      }  ,
+      {
         "uuid": "433b8e0e-88c5-11ea-bc55-0242ac130003",
         "name": "Widgets",
         "icon": "fa fa-th-large",
@@ -301,14 +309,8 @@
             "to": "/table-basic",
             "icon": false,
             "children": false
-          },
-          {
-            "uuid": "dumy-uuid",
-            "name": "Data Tables",
-            "to": "/table-data",
-            "icon": false,
-            "children": false
-          }       
+          }
+              
         ]
       },
       {

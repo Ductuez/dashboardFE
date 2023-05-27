@@ -8,6 +8,7 @@ import { reducer as taoBotReducer } from "./taoBot";
 import { reducer as listBotReducer } from "./listBot";
 import { reducer as startBotReducer } from "./startBot";
 import { reducer as choiThuReducer } from "./choiThu";
+import { reducer as listDsBetReducer } from "./listDsBet";
 
 const reducers = [
   // Chung
@@ -18,6 +19,7 @@ const reducers = [
   taoBotReducer,
   listBotReducer,
   startBotReducer,
+  listDsBetReducer,
   choiThuReducer,
 ];
 
