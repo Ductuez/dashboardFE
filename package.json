@@ -22,7 +22,7 @@
     "chartist": "^0.11.4",
     "chartjs-plugin-datalabels": "^0.7.0",
     "crypto-js": "^4.1.1",
-    "dotenv": "^8.2.0",
+    "dotenv": "^16.0.3",
     "dotenv-expand": "^5.1.0",
     "font-awesome": "^4.7.0",
     "formik": "^2.2.6",
@@ -72,7 +72,7 @@
     "yup": "^0.29.3"
   },
   "scripts": {
-    "start": "serve -s build",
+    "start": "dotenv -e .env serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "HOST=62.171.169.64 react-scripts eject"
