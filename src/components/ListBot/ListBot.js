@@ -9,9 +9,9 @@ const ListBot = (props) => {
   const duLieuDsBot = R.pathOr([], ["duLieu"])(dsBot);
   return (
     <table
-      id='datatable'
-      className='table table-striped nowrap dataTable no-footer dtr-inline'
-      width='100%'
+      id="datatable"
+      className="table table-striped nowrap dataTable no-footer dtr-inline"
+      width="100%"
     >
       <thead>
         <tr>
@@ -40,29 +40,29 @@ const ListBot = (props) => {
 
               <td>
                 {item.status ? (
-                  <span className='label label-warning'>New</span>
+                  <span className="label label-warning">New</span>
                 ) : (
-                  <span className='label label-warning'>New</span>
+                  <span className="label label-warning">New</span>
                 )}
               </td>
-              <td className='text-center'>
-                <span className='label label-warning'>New</span>
+              <td className="text-center">
+                <span className="label label-warning">New</span>
               </td>
               <td>{moment(item.updatedAt).format("DD-MM-YYYY")}</td>
-              <td className='text-center'>
+              <td className="text-center">
                 <Button
-                  variant='success'
-                  size='sm'
+                  variant="success"
+                  size="sm"
                   onClick={() => xuLyStartBot(item)}
                 >
-                  <i className=' icon-control-play' />
+                  <i className=" icon-control-play" />
                 </Button>
                 <Button
-                  variant='danger'
-                  size='sm'
+                  variant="danger"
+                  size="sm"
                   onClick={() => xuLyStopBot(item)}
                 >
-                  <i className='fa fa-trash' />
+                  <i className="fa fa-trash" />
                 </Button>
               </td>
             </tr>
