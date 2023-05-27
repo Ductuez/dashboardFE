@@ -1,4 +1,3 @@
-import initialState from "./initialState";
 // Chung
 import { reducer as dangNhapReducer } from "./dangNhap";
 import { reducer as truyCapValidCodeReducer } from "./truyCapValidCode";
@@ -23,7 +22,7 @@ const reducers = [
   choiThuReducer,
 ];
 
-export default function reducer(state = initialState, action) {
+export default function reducer(state = {}, action) {
   let newState;
 
   switch (action.type) {
