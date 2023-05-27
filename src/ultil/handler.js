@@ -56,7 +56,7 @@ export const xuLyStartBot = (self) => (duLieu) => {
 export const xuLyStopBot = (self) => (duLieu) => {};
 
 export const xuLyChoiThu = (self) => (e) => {
-  const { choiThu, userProfile } = self.props;
+  const { choiThu } = self.props;
   e.preventDefault();
   choiThu().then((result) => {});
 };

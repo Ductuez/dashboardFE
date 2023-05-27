@@ -10,6 +10,7 @@ function Layout(props) {
   useEffect(() => {
     const { userProfile } = props;
     userProfile();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const ktLogin = checkLogin(userDetail);
 

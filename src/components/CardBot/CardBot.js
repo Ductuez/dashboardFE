@@ -51,6 +51,7 @@ const CardBot = (props) => {
 
   useEffect(() => {
     setValue("chooseGame", chooseGame);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chooseGame]);
 
   return (

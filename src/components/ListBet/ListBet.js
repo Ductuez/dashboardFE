@@ -15,13 +15,13 @@ const ListBet = (props) => {
     }, 30000);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [listDsBet]);
 
   return (
     <table
-      id="datatable"
-      className="table table-striped nowrap dataTable no-footer dtr-inline"
-      width="100%"
+      id='datatable'
+      className='table table-striped nowrap dataTable no-footer dtr-inline'
+      width='100%'
     >
       <thead>
         <tr>
@@ -56,8 +56,8 @@ const ListBet = (props) => {
               <td>
                 <NumericFormat
                   value={item?.totalMoney}
-                  thousandSeparator=","
-                  displayType="text"
+                  thousandSeparator=','
+                  displayType='text'
                   renderText={(value) => <b>{value} vnđ</b>}
                 />
               </td>
