@@ -46,7 +46,6 @@ import Chartist from "./pages/charts/ChartistCharts/Chartist";
 // //EXAMPLES
 import CorporateAdd from "./pages/corporate-add";
 import CorporatePages from "./pages/corporate-pages";
-import EcommerceAdd from "./pages/ecommerce-add";
 import EcommerceOrders from "./pages/ecommerce-orders";
 import EcommerceProducts from "./pages/ecommerce-products";
 import ExamplesAddAndUpdate from "./pages/examples-add-and-update";
@@ -141,7 +140,6 @@ ReactDOM.render(
             <Route path={`/corporate-add`} component={CorporateAdd} />
             <Route path={`/corporate-pages`} component={CorporatePages} />
 
-            <Route path={`/ecommerce-add`} component={EcommerceAdd} />
             <Route path={`/ecommerce-orders`} component={EcommerceOrders} />
             <Route path={`/ecommerce-products`} component={EcommerceProducts} />
 
