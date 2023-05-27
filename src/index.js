@@ -68,7 +68,6 @@ import UiJqueryElements from "./pages/ui-jquery-elements";
 import UiModals from "./pages/ui-modals";
 import UiNotification from "./pages/ui-notification";
 import UiProgress from "./pages/ui-progress";
-import UiSweetalerts from "./pages/ui-sweetalerts";
 import UiTypography from "./pages/ui-typography";
 import Page404 from "./pages/page-error/page-404";
 
@@ -143,7 +142,6 @@ ReactDOM.render(
             <Route path={`/ui-modals`} component={UiModals} />
             <Route path={`/ui-notification`} component={UiNotification} />
             <Route path={`/ui-progress`} component={UiProgress} />
-            <Route path={`/ui-sweetalerts`} component={UiSweetalerts} />
             <Route path={`/ui-typography`} component={UiTypography} />
             <Route path={`/widgets-apps`} component={WidgetsApps} />
             <Route path={`/widgets-data`} component={WidgetsData} />
