@@ -74,7 +74,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "HOST=62.171.169.64 react-scripts eject"
+    "eject": "HOST=62.171.169.64 react-scripts eject",
+    "heroku-postbuild": "npm run build"
+
+  },
+  "engines": {
+    "node": "16.16.0",
+    "npm": ">=6.0.0"
   },
   "eslintConfig": {
     "extends": "react-app"
