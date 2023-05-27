@@ -230,13 +230,6 @@
             "icon": false,
             "to": "/ui-carousel",
             "children": false
-          },
-          {
-            "uuid": "dumy-uuid",
-            "name": "Range Slider",
-            "icon": false,
-            "to": "/ui-range-slider",
-            "children": false
           }
         ]
       },
