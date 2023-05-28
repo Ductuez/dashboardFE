@@ -8,7 +8,7 @@ import {
   dangNhap,
   userProfile,
 } from "../../../action";
-import { xuLyLogin } from "../../../ultils/handler";
+import { xuLyLogin } from "../../../ultil/handler";
 class Login extends React.Component {
   state = {
     hasError: false,

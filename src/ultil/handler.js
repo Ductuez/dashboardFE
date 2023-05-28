@@ -1,8 +1,8 @@
 import { Router } from "react-router-dom/cjs/react-router-dom.min";
 import * as R from "ramda";
 
-export const xuLyLogin = (props) => (duLieu) => {
-  const { dangNhap, userProfile } = props;
+export const xuLyLogin = (self) => (duLieu) => {
+  const { dangNhap, userProfile } = self.props;
   dangNhap(duLieu).then((result) => {
     Router.push("/");
     userProfile();
@@ -59,4 +59,28 @@ export const xuLyChoiThu = (self) => (e) => {
   const { choiThu } = self.props;
   e.preventDefault();
   choiThu().then((result) => {});
+};
+
+export const xuLyXoaBot = (self) => (duLieu) => {
+  const { xoaBot, listBot } = self.props;
+
+  const idBot = duLieu._id;
+  const duLieuGui = {
+    idBot,
+  };
+
+  xoaBot(duLieuGui).then(() => {
+    listBot();
+  });
+};
+
+export const xuLyDangKy = (self) => (duLieu) => {
+  const { dangKy, userProfile } = self.props;
+  const duLieuBieuMau = {
+    ...duLieu,
+  };
+
+  dangKy(duLieuBieuMau).then(() => {
+    userProfile();
+  });
 };

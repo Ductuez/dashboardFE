@@ -3,8 +3,9 @@ import axios from "axios";
 import * as R from "ramda";
 
 // import Constants from '../constants'
-import { API_TX } from "../ultils/service";
-import { dangNhap as dangNhapNguoiDung } from "../ultils/common";
+import { dangNhap as dangNhapNguoiDung } from "../ultil/common";
+
+import { API_TX } from "../ultil/services";
 
 import {
   DANG_NHAP_BAT_DAU,

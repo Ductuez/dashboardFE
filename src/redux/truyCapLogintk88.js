@@ -3,14 +3,14 @@ import axios from "axios";
 import * as R from "ramda";
 
 // import Constants from '../constants'
-import { API_TX } from "../ultils/service";
+import { truyCapCookie } from "../ultil/common";
 
 import {
   TRUY_CAP_LOGIN_TK88_BAT_DAU,
   TRUY_CAP_LOGIN_TK88_THANH_CONG,
   TRUY_CAP_LOGIN_TK88_THAT_BAI,
 } from "./constants";
-import { truyCapCookie } from "../ultils/common";
+import { API_TX } from "../ultil/services";
 
 export const truyCapLogintk88 =
   (duLieuBieuMau = {}) =>

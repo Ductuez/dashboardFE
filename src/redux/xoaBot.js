@@ -5,21 +5,20 @@ import * as R from "ramda";
 // import Constants from '../constants'
 import { truyCapCookie } from "../ultil/common";
 
+import {
+  XU_LY_XOA_BOT_BAT_DAU,
+  XU_LY_XOA_BOT_THANH_CONG,
+  XU_LY_XOA_BOT_THAT_BAI,
+} from "./constants";
 import { API_TX } from "../ultil/services";
 
-import {
-  TRUY_CAP_THONG_TIN_NGUOI_DUNG_BAT_DAU,
-  TRUY_CAP_THONG_TIN_NGUOI_DUNG_THANH_CONG,
-  TRUY_CAP_THONG_TIN_NGUOI_DUNG_THAT_BAI,
-} from "./constants";
-
-export const userProfile = () => (dispatch) => {
+export const xoaBot = (duLieu) => (dispatch) => {
   dispatch({
-    type: TRUY_CAP_THONG_TIN_NGUOI_DUNG_BAT_DAU,
+    type: XU_LY_XOA_BOT_BAT_DAU,
   });
 
   const promise = new Promise((resolve, reject) => {
-    const doRequest = axios.get("info", {
+    const doRequest = axios.post(`bot/delete`, duLieu, {
       ...API_TX,
       headers: {
         Authorization: truyCapCookie("token"),
@@ -32,7 +31,7 @@ export const userProfile = () => (dispatch) => {
 
         dispatch({
           duLieu: duLieu,
-          type: TRUY_CAP_THONG_TIN_NGUOI_DUNG_THANH_CONG,
+          type: XU_LY_XOA_BOT_THANH_CONG,
         });
 
         resolve(duLieu);
@@ -45,7 +44,7 @@ export const userProfile = () => (dispatch) => {
   return promise.catch((loi) => {
     dispatch({
       loi,
-      type: TRUY_CAP_THONG_TIN_NGUOI_DUNG_THAT_BAI,
+      type: XU_LY_XOA_BOT_THAT_BAI,
     });
     return loi;
   });
@@ -53,30 +52,30 @@ export const userProfile = () => (dispatch) => {
 
 export const reducer = (state, action) => {
   switch (action.type) {
-    case TRUY_CAP_THONG_TIN_NGUOI_DUNG_BAT_DAU:
+    case XU_LY_XOA_BOT_BAT_DAU:
       return {
         ...state,
-        userDetail: {
-          ...state.userDetail,
+        ketQuaXoaBot: {
+          ...state.ketQuaXoaBot,
           loi: null,
           dangXuLy: true,
         },
       };
-    case TRUY_CAP_THONG_TIN_NGUOI_DUNG_THANH_CONG:
+    case XU_LY_XOA_BOT_THANH_CONG:
       return {
         ...state,
-        userDetail: {
+        ketQuaXoaBot: {
           duLieu: action.duLieu,
           loi: null,
           dangXuLy: false,
         },
       };
 
-    case TRUY_CAP_THONG_TIN_NGUOI_DUNG_THAT_BAI:
+    case XU_LY_XOA_BOT_THAT_BAI:
       return {
         ...state,
-        userDetail: {
-          ...state.userDetail,
+        ketQuaXoaBot: {
+          ...state.ketQuaXoaBot,
           loi: action.loi,
           dangXuLy: false,
         },

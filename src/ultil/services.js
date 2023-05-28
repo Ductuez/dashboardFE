@@ -1,44 +1,16 @@
-import * as R from "ramda";
-import cookie from "js-cookie";
+export const API = "https://api.getpostman.com/collections";
+export const COLLECTION_UID = "18556915-f3c9c4a0-947a-4068-ae29-3e921ebd3eee";
+export const API_KEY =
+  "PMAK-642ce682f906a17f3ed9cd9c-67c56c05665158d0e3f21aa2d090b7cbe0";
 
-const coDocument = typeof document !== "undefined";
-
-export const accessCookie = (name = "") => {
-  if (coDocument && name) {
-    const value = "; " + document.cookie;
-    const parts = value.split("; " + name + "=");
-
-    if (R.equals(parts.length, 2)) {
-      return parts.pop().split(";").shift();
-    }
-  }
-
-  return "";
+export const headers = {
+  "X-Api-Key": API_KEY,
+  "Content-Type": "application/json",
 };
 
-export const saveCookie = (name, value) => {
-  cookie.set(name, value, { expires: 1 });
-};
-
-export const checkLogin = (profile = {}) => {
-  const token = truyCapCookie("token");
-  const daDangNhap = R.pathOr("", ["duLieu", "_id"])(profile);
-  return !!daDangNhap && token;
-};
-
-export const truyCapCookie = (name = "") => {
-  if (coDocument) {
-    const value = "; " + document.cookie;
-    const parts = value.split("; " + name + "=");
-
-    if (R.equals(parts.length, 2)) {
-      return parts.pop().split(";").shift();
-    }
-
-    return "";
-  }
-};
-
-export const dangNhap = (token = "") => {
-  cookie.set("token", token, { expires: 3 });
+export const API_TX = {
+  baseURL: `http://localhost:3200/`,
+  headers: {
+    Authorization: "",
+  },
 };

@@ -3,8 +3,8 @@ import axios from "axios";
 import * as R from "ramda";
 
 // import Constants from '../constants'
-import { API_TX } from "../ultils/service";
-import { truyCapCookie } from "../ultils/common";
+import { API_TX } from "../ultil/services";
+import { truyCapCookie } from "../ultil/common";
 
 import {
   TRUY_CAP_DS_BET_BAT_DAU,

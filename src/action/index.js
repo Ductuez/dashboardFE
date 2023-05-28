@@ -7,3 +7,4 @@ export { listBot } from "../redux/listBot";
 export { startBot } from "../redux/startBot";
 export { listDsBet } from "../redux/listDsBet";
 export { choiThu } from "../redux/choiThu";
+export { xoaBot } from "../redux/xoaBot";

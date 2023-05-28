@@ -3,7 +3,7 @@ import axios from "axios";
 import * as R from "ramda";
 
 // import Constants from '../constants'
-import { API_TX } from "../ultils/service";
+import { API_TX } from "../ultil/services";
 
 import {
   TRUY_CAP_VALID_CODE_BAT_DAU,

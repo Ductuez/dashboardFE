@@ -84,6 +84,8 @@ class Dashboard extends React.Component {
       xuLyLoginTk88(this)({ ...this.state.form, password: passwordMD5 });
     };
 
+    console.log(this.state.form);
+
     const handleChange = (e) => {
       const { value, name } = e.target;
 

@@ -3,7 +3,7 @@ import BackendLayout from "./backend-layout";
 import Login from "../pages/auth/login";
 import { connect } from "react-redux";
 import { userProfile } from "../action";
-import { checkLogin } from "../ultils/common";
+import { checkLogin } from "../ultil/common";
 
 function Layout(props) {
   const { userDetail, children } = props;

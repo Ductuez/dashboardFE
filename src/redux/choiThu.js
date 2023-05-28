@@ -3,8 +3,9 @@ import axios from "axios";
 import * as R from "ramda";
 
 // import Constants from '../constants'
-import { API_TX } from "../ultils/service";
-import { truyCapCookie } from "../ultils/common";
+import { truyCapCookie } from "../ultil/common";
+
+import { API_TX } from "../ultil/services";
 
 import {
   CHOI_THU_BAT_DAU,

@@ -3,14 +3,15 @@ import axios from "axios";
 import * as R from "ramda";
 
 // import Constants from '../constants'
-import { API_TX } from "../ultils/service";
+import { truyCapCookie } from "../ultil/common";
+
+import { API_TX } from "../ultil/services";
 
 import {
   XU_LY_BET_BAT_DAU,
   XU_LY_BET_THANH_CONG,
   XU_LY_BET_THAT_BAI,
 } from "./constants";
-import { truyCapCookie } from "../ultils/common";
 
 export const taoBot =
   ({ duLieu = {}, type }) =>
