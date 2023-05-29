@@ -1,10 +1,11 @@
-import { Router } from "react-router-dom/cjs/react-router-dom.min";
 import * as R from "ramda";
 
-export const xuLyLogin = (self) => (duLieu) => {
-  const { dangNhap, userProfile } = self.props;
+export const xuLyLogin = (props) => (duLieu) => {
+  const { dangNhap, userProfile } = props;
+
+  console.log(duLieu, "duLieu");
+
   dangNhap(duLieu).then((result) => {
-    Router.push("/");
     userProfile();
   });
 };

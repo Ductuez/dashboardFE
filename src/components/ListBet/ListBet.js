@@ -51,7 +51,7 @@ const ListBet = (props) => {
             <tr key={index}>
               <td>{item?.gameName}</td>
               <td>{item?.turnNum}</td>
-              <td>{moment(item?.turnDate).format("DD-MM-YYYY ")}</td>
+              <td>{moment(item?.addTime).format("DD-MM-YYYY hh:mm:ss")}</td>
               <td>{item?.playName}</td>
               <td>
                 <NumericFormat

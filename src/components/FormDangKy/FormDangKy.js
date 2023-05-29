@@ -15,6 +15,8 @@ const FormDangKy = (props) => {
 
   const password = watch("password", "");
 
+  console.log(password);
+
   const submitForm = (data) => {
     console.log(data);
     xuLyDangKy(data);
