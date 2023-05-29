@@ -7,6 +7,8 @@ const ListBot = (props) => {
   const { dsBot, xuLyStartBot, xuLyXoaBot } = props;
 
   const duLieuDsBot = R.pathOr([], ["duLieu"])(dsBot);
+
+  console.log(duLieuDsBot);
   return (
     <table
       id='datatable'
