@@ -19,6 +19,7 @@ import LockScreen from "./pages/auth/lockscreen";
 // //pages
 import Dashboard from "./pages/dashboard";
 import BotTool from "./pages/BotTool";
+import BetRecord from "./pages/BetRecord";
 
 //Widgets
 import WidgetsApps from "./pages/widgets-apps";
@@ -70,8 +71,11 @@ import UiNotification from "./pages/ui-notification";
 import UiProgress from "./pages/ui-progress";
 import UiTypography from "./pages/ui-typography";
 import Page404 from "./pages/page-error/page-404";
+import io from "socket.io-client";
 
 import * as serviceWorker from "./serviceWorker";
+const socket = io("http://localhost:3200");
+console.log(socket);
 
 ReactDOM.render(
   <React.StrictMode>
@@ -91,6 +95,7 @@ ReactDOM.render(
             <Route exact path='/' render={() => <Redirect to='/dashboard' />} />
             <Route path={`/dashboard`} component={Dashboard} />
             <Route path={`/bot-tool`} component={BotTool} />
+            <Route path={`/bet-record`} component={BetRecord} />
 
             <Route path={`/app-contact-detail`} component={AppContactDetail} />
             <Route path={`/app-contact`} component={AppContact} />
@@ -149,7 +154,18 @@ ReactDOM.render(
           <Route path='*' component={Page404} />
         </Switch>
       </BrowserRouter>
-      <ToastContainer />
+      <ToastContainer
+        position='top-right'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='light'
+      />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

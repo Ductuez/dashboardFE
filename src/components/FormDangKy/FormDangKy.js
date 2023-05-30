@@ -15,14 +15,10 @@ const FormDangKy = (props) => {
 
   const password = watch("password", "");
 
-  console.log(password);
-
   const submitForm = (data) => {
     console.log(data);
     xuLyDangKy(data);
   };
-
-  console.log(errors);
 
   return (
     <Form>
@@ -51,7 +47,7 @@ const FormDangKy = (props) => {
                 type='email'
                 placeholder='Enter Email'
                 className='form-control'
-                {...register("email", {})}
+                {...register("email")}
               />
               <span className='icon-envelope text-muted icon-input' />
             </div>
@@ -64,24 +60,7 @@ const FormDangKy = (props) => {
                 type='password'
                 placeholder='Password'
                 className='form-control'
-                {...register("password", {})}
-              />
-              <span className='icon-lock text-muted icon-input' />
-            </div>
-          </Form.Group>
-          <Form.Group className='group-icon'>
-            <label htmlFor='exampleInputPassword2'>Confirm Password</label>
-            <div className='group-icon'>
-              <input
-                id='exampleInputPassword2'
-                type='password'
-                placeholder='Confirm Password'
-                className='form-control'
-                {...register("confirmPassword", {
-                  validate: {
-                    validateText: (_, values) => !!password === values,
-                  },
-                })}
+                {...register("password")}
               />
               <span className='icon-lock text-muted icon-input' />
             </div>

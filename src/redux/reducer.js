@@ -9,6 +9,8 @@ import { reducer as startBotReducer } from "./startBot";
 import { reducer as choiThuReducer } from "./choiThu";
 import { reducer as listDsBetReducer } from "./listDsBet";
 import { reducer as xoaBotReducer } from "./xoaBot";
+import { reducer as dangKyReducer } from "./dangKy";
+import { reducer as dangXuatReducer } from "./dangXuat";
 
 const reducers = [
   // Chung
@@ -22,6 +24,8 @@ const reducers = [
   listDsBetReducer,
   choiThuReducer,
   xoaBotReducer,
+  dangKyReducer,
+  dangXuatReducer,
 ];
 
 export default function reducer(state = {}, action) {

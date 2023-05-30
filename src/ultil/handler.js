@@ -1,9 +1,8 @@
 import * as R from "ramda";
+import { toast } from "react-toastify";
 
 export const xuLyLogin = (props) => (duLieu) => {
   const { dangNhap, userProfile } = props;
-
-  console.log(duLieu, "duLieu");
 
   dangNhap(duLieu).then((result) => {
     userProfile();
@@ -29,8 +28,6 @@ export const xuLyLoginTk88 = (self) => (duLieu) => {
 export const xuLyTaoBot = (self) => (duLieu) => {
   const { taoBot, listBot } = self.props;
 
-  console.log(duLieu);
-
   taoBot({ duLieu }).then(() => {
     listBot();
   });
@@ -39,6 +36,7 @@ export const xuLyTaoBot = (self) => (duLieu) => {
 export const xuLyStartBot = (self) => (duLieu) => {
   const { startBot } = self.props;
   const game = R.pathOr([], ["game"])(duLieu);
+  const trangThai = R.pathOr(true, ["status"])(duLieu);
 
   async function callAPIsSequentially() {
     for (let i = 0; i < game.length; i++) {
@@ -52,7 +50,18 @@ export const xuLyStartBot = (self) => (duLieu) => {
     }
   }
 
-  callAPIsSequentially();
+  trangThai
+    ? toast("Bot đang được chạy !!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      })
+    : callAPIsSequentially();
 };
 export const xuLyStopBot = (self) => (duLieu) => {};
 
@@ -82,6 +91,13 @@ export const xuLyDangKy = (self) => (duLieu) => {
   };
 
   dangKy(duLieuBieuMau).then(() => {
-    userProfile();
+    userProfile().then((reuslt) => {
+      window.history.push("/");
+    });
   });
+};
+
+export const xuLyDangXuat = (self) => (duLieu) => {
+  const { dangXuat } = self.props;
+  dangXuat();
 };

@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import TopbarUserProfile from "./profile";
 import RightSidebar from "../right-sidebar";
 import { Container, Row, Col, Button, Image } from "react-bootstrap";
-
+import { connect } from "react-redux";
+import * as R from "ramda";
+import { xuLyDangXuat } from "../../ultil/handler";
+import { dangXuat } from "../../action";
 class Topbar extends React.Component {
   constructor(props) {
     super(props);
@@ -36,6 +39,15 @@ class Topbar extends React.Component {
   }
 
   render() {
+    const { userDetail } = this.props;
+
+    console.log(userDetail);
+    const username = R.pathOr("", ["duLieu", "email"])(userDetail);
+
+    const thuocTinhTopbarUserProfile = {
+      username,
+      xuLyDangXuat: xuLyDangXuat(this),
+    };
     return (
       <React.Fragment>
         {/* ============================================================== */}
@@ -85,7 +97,7 @@ class Topbar extends React.Component {
                   {/* <TopbarRightSideBarBtn
                     showRightSideBarHandler={this.showRightSideBarHandler}
                   /> */}
-                  <TopbarUserProfile />
+                  <TopbarUserProfile {...thuocTinhTopbarUserProfile} />
                 </ul>
               </Col>
             </Row>
@@ -109,4 +121,12 @@ class Topbar extends React.Component {
   }
 }
 
-export default Topbar;
+const mapStateToProps = (common) => {
+  return common;
+};
+
+const mapDispatchToProps = {
+  dangXuat,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Topbar);

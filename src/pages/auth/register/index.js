@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 
-import { dangNhap, userProfile } from "../../../action";
+import { dangNhap, userProfile, dangKy } from "../../../action";
 import FormDangKy from "../../../components/FormDangKy/FormDangKy";
 import { xuLyDangKy } from "../../../ultil/handler";
 
@@ -49,6 +49,7 @@ const mapStateToProps = (common) => {
 const mapDispatchToProps = {
   dangNhap,
   userProfile,
+  dangKy,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);

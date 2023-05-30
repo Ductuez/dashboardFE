@@ -14,16 +14,10 @@ import {
   listDsBet,
   xoaBot,
 } from "../../action";
-import {
-  xuLyTaoBot,
-  xuLyStartBot,
-  xuLyStopBot,
-  xuLyXoaBot,
-} from "../../ultil/handler";
-import CardBot from "../../components/CardBot/CardBot";
-import ListBot from "../../components/ListBot/ListBot";
+// import {} from "../../ultil/handler";
+import ListBet from "../../components/ListBet/ListBet";
 
-class BotTool extends React.Component {
+class BetRecord extends React.Component {
   constructor(props) {
     super(props);
     this.scrollToTop = this.scrollToTop.bind(this);
@@ -72,30 +66,21 @@ class BotTool extends React.Component {
   render() {
     // const { userDetail } = this.props;
 
-    const propertiesCardBot = {
-      xuLyTaoBot: xuLyTaoBot(this),
-    };
+    const { dsBet, listDsBet } = this.props;
 
-    const { dsBot } = this.props;
-
-    const propertiesListBot = {
-      dsBot,
-      xuLyStartBot: xuLyStartBot(this),
-      xuLyStopBot: xuLyStopBot(this),
-      xuLyXoaBot: xuLyXoaBot(this),
+    const propertiesListBet = {
+      dsBet,
+      listDsBet,
     };
 
     return (
       <React.Fragment>
         <Row>
-          <Col md='12'>
-            <CardBot {...propertiesCardBot} />
-          </Col>
-          <Col md='12'>
-            <ListBot {...propertiesListBot} />
-          </Col>
-
           <h3>Lịch sử cược</h3>
+
+          <Col md='12'>
+            <ListBet {...propertiesListBet} />
+          </Col>
         </Row>
       </React.Fragment>
     );
@@ -117,4 +102,4 @@ const mapDispatchToProps = {
   xoaBot,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BotTool);
+export default connect(mapStateToProps, mapDispatchToProps)(BetRecord);

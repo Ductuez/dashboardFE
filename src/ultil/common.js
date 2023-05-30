@@ -42,3 +42,12 @@ export const truyCapCookie = (name = "") => {
 export const dangNhap = (token = "") => {
   cookie.set("token", token, { expires: 3 });
 };
+
+export const dangXuat = () => {
+  const cookies = cookie.get();
+
+  Object.keys(cookies).forEach((key) => {
+    cookie.remove(key);
+  });
+  window.localStorage.setItem("logout", Date.now());
+};

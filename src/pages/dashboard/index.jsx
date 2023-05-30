@@ -3,6 +3,7 @@ import "./index.scss";
 import { Row, Col, Card, Form, Button } from "react-bootstrap";
 import { MD5 } from "crypto-js";
 import * as R from "ramda";
+import { withRouter } from "react-router-dom";
 
 import { Events, animateScroll as scroll, scroller } from "react-scroll";
 import { connect } from "react-redux";
@@ -307,4 +308,7 @@ const mapDispatchToProps = {
   choiThu,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(Dashboard));
