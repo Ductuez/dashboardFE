@@ -4,8 +4,9 @@ import Login from "../pages/auth/login";
 import { connect } from "react-redux";
 import { userProfile } from "../action";
 import { checkLogin } from "../ultil/common";
-import io from "socket.io-client";
-const socket = io("http://localhost:3200");
+// import io from "socket.io-client";
+// import { API_TX } from "../ultil/services";
+// const socket = io(API_TX.baseURL);
 
 function Layout(props) {
   const { userDetail, children } = props;
@@ -14,19 +15,19 @@ function Layout(props) {
     const { userProfile } = props;
     userProfile();
 
-    // Event handler for 'connect' event
-    socket.on("connect", () => {
-      console.log("Connected to Socket.IO server");
-    });
+    // // Event handler for 'connect' event
+    // socket.on("connect", () => {
+    //   console.log("Connected to Socket.IO server");
+    // });
 
-    // Event handler for custom 'message' event
-    socket.on("message", (data) => {
-      console.log("Received a message:", data);
-    });
+    // // Event handler for custom 'message' event
+    // socket.on("message", (data) => {
+    //   console.log("Received a message:", data);
+    // });
 
-    return () => {
-      socket.disconnect();
-    };
+    // return () => {
+    //   socket.disconnect();
+    // };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
