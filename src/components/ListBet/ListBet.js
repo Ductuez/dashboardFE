@@ -48,7 +48,16 @@ const ListBet = (props) => {
       <tbody>
         {duLieuRow.map((item, index) => {
           return (
-            <tr key={index}>
+            <tr
+              key={index}
+              className={
+                item?.winMoney === 0
+                  ? "bg-warning"
+                  : item?.winnable
+                  ? "bg-primary"
+                  : "bg-success"
+              }
+            >
               <td>{item?.gameName}</td>
               <td>{item?.turnNum}</td>
               <td>{moment(item?.addTime).format("DD-MM-YYYY hh:mm:ss")}</td>

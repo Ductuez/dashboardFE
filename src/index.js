@@ -71,11 +71,8 @@ import UiNotification from "./pages/ui-notification";
 import UiProgress from "./pages/ui-progress";
 import UiTypography from "./pages/ui-typography";
 import Page404 from "./pages/page-error/page-404";
-import io from "socket.io-client";
 
 import * as serviceWorker from "./serviceWorker";
-const socket = io("http://localhost:3200");
-console.log(socket);
 
 ReactDOM.render(
   <React.StrictMode>

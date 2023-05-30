@@ -41,7 +41,6 @@ class Topbar extends React.Component {
   render() {
     const { userDetail } = this.props;
 
-    console.log(userDetail);
     const username = R.pathOr("", ["duLieu", "email"])(userDetail);
 
     const thuocTinhTopbarUserProfile = {

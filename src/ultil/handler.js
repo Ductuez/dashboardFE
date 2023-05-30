@@ -28,7 +28,7 @@ export const xuLyLoginTk88 = (self) => (duLieu) => {
 export const xuLyTaoBot = (self) => (duLieu) => {
   const { taoBot, listBot } = self.props;
 
-  taoBot({ duLieu }).then(() => {
+  taoBot({ duLieu: { ...duLieu, status: false } }).then(() => {
     listBot();
   });
 };
@@ -63,7 +63,6 @@ export const xuLyStartBot = (self) => (duLieu) => {
       })
     : callAPIsSequentially();
 };
-export const xuLyStopBot = (self) => (duLieu) => {};
 
 export const xuLyChoiThu = (self) => (e) => {
   const { choiThu } = self.props;
@@ -100,4 +99,17 @@ export const xuLyDangKy = (self) => (duLieu) => {
 export const xuLyDangXuat = (self) => (duLieu) => {
   const { dangXuat } = self.props;
   dangXuat();
+};
+
+export const xuLyNgungBot = (self) => (duLieu) => {
+  const { ngungBot, listBot } = self.props;
+
+  const idBot = duLieu._id;
+  const duLieuGui = {
+    idBot,
+  };
+  ngungBot(duLieuGui).then(() => {
+    listBot();
+    toast("Bot đã được dừng !!");
+  });
 };

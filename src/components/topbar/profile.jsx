@@ -6,8 +6,6 @@ import "./style.scss";
 const TopbarUserProfile = (props) => {
   const { username, xuLyDangXuat } = props;
 
-  console.log(xuLyDangXuat);
-
   return (
     <React.Fragment>
       <Dropdown as='li' className='avtar-dropdown'>

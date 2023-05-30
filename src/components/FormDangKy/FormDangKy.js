@@ -6,14 +6,7 @@ import { useForm } from "react-hook-form";
 const FormDangKy = (props) => {
   const { xuLyDangKy } = props;
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-
-  const password = watch("password", "");
+  const { register, handleSubmit } = useForm();
 
   const submitForm = (data) => {
     console.log(data);

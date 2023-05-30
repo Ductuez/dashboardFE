@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 import * as moment from "moment";
 
 const ListBot = (props) => {
-  const { dsBot, xuLyStartBot, xuLyXoaBot } = props;
+  const { dsBot, xuLyStartBot, xuLyXoaBot, xuLyNgungBot } = props;
 
   const duLieuDsBot = R.pathOr([], ["duLieu"])(dsBot);
 
@@ -64,8 +64,17 @@ const ListBot = (props) => {
                   variant='danger'
                   size='sm'
                   onClick={() => xuLyXoaBot(item)}
+                  className='mr-2'
                 >
                   <i className='fa fa-trash' />
+                </Button>
+
+                <Button
+                  variant='warning'
+                  size='sm'
+                  onClick={() => xuLyNgungBot(item)}
+                >
+                  <i className='fa fa-ban' />
                 </Button>
               </td>
             </tr>

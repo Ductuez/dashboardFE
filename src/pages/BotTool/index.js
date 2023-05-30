@@ -13,12 +13,13 @@ import {
   startBot,
   listDsBet,
   xoaBot,
+  ngungBot,
 } from "../../action";
 import {
   xuLyTaoBot,
   xuLyStartBot,
-  xuLyStopBot,
   xuLyXoaBot,
+  xuLyNgungBot,
 } from "../../ultil/handler";
 import CardBot from "../../components/CardBot/CardBot";
 import ListBot from "../../components/ListBot/ListBot";
@@ -81,8 +82,8 @@ class BotTool extends React.Component {
     const propertiesListBot = {
       dsBot,
       xuLyStartBot: xuLyStartBot(this),
-      xuLyStopBot: xuLyStopBot(this),
       xuLyXoaBot: xuLyXoaBot(this),
+      xuLyNgungBot: xuLyNgungBot(this),
     };
 
     return (
@@ -115,6 +116,7 @@ const mapDispatchToProps = {
   startBot,
   listDsBet,
   xoaBot,
+  ngungBot,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BotTool);
