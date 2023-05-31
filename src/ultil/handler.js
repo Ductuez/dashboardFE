@@ -36,7 +36,9 @@ export const xuLyTaoBot = (self) => (duLieu) => {
 export const xuLyStartBot = (self) => (duLieu) => {
   const { startBot } = self.props;
   const game = R.pathOr([], ["game"])(duLieu);
-  const trangThai = R.pathOr(true, ["status"])(duLieu);
+  const trangThai = R.pathOr(false, ["status"])(duLieu);
+
+  console.log(duLieu);
 
   async function callAPIsSequentially() {
     for (let i = 0; i < game.length; i++) {
@@ -91,7 +93,7 @@ export const xuLyDangKy = (self) => (duLieu) => {
 
   dangKy(duLieuBieuMau).then(() => {
     userProfile().then((reuslt) => {
-      window.history.push("/");
+      window.history.pushState({ urlPath: "/" });
     });
   });
 };
