@@ -20,7 +20,7 @@ const Login = (props) => {
         <div className='misc-content'>
           <Container>
             <Row className='justify-content-center'>
-              <Col sm='12' md='5' lg='4' className='col-4'>
+              <Col sm='12' md='5' lg='4'>
                 <div to='#javascript' className='misc-header text-center'>
                   <Link to='/'>
                     <Image

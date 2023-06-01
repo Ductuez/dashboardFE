@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-// import * as R from "ramda";
+import * as R from "ramda";
 import { Events, animateScroll as scroll, scroller } from "react-scroll";
 import { connect } from "react-redux";
 
@@ -16,6 +16,7 @@ import {
 } from "../../action";
 // import {} from "../../ultil/handler";
 import ListBet from "../../components/ListBet/ListBet";
+import { NumericFormat } from "react-number-format";
 
 class BetRecord extends React.Component {
   constructor(props) {
@@ -73,10 +74,35 @@ class BetRecord extends React.Component {
       listDsBet,
     };
 
+    const tongCuoc = R.pathOr(0, ["duLieu", "other", "totalMoney"])(dsBet);
+    const tongThangThua = R.pathOr(0, ["duLieu", "other", "rewardRebate"])(
+      dsBet
+    );
+
     return (
       <React.Fragment>
         <Row>
-          <h3>Lịch sử cược</h3>
+          <div className='d-flex'>
+            <h3 className='ml-3'>Lịch sử cược</h3>
+            <h3 className='ml-3 text-info'>
+              Tổng cược:&nbsp;
+              <NumericFormat
+                value={tongCuoc}
+                thousandSeparator=','
+                displayType='text'
+                renderText={(value) => <b>{value} vnđ</b>}
+              />
+            </h3>
+            <h3 className='ml-3 text-primary'>
+              Tổng Thắng thua:&nbsp;
+              <NumericFormat
+                value={tongThangThua}
+                thousandSeparator=','
+                displayType='text'
+                renderText={(value) => <b>{value} vnđ</b>}
+              />
+            </h3>
+          </div>
 
           <Col md='12'>
             <ListBet {...propertiesListBet} />

@@ -20,7 +20,7 @@ const ListBet = (props) => {
   return (
     <table
       id='datatable'
-      className='table table-striped nowrap dataTable no-footer dtr-inline'
+      className='table table-striped nowrap dataTable no-footer dtr-inline c-list-bet'
       width='100%'
     >
       <thead>
@@ -48,16 +48,7 @@ const ListBet = (props) => {
       <tbody>
         {duLieuRow.map((item, index) => {
           return (
-            <tr
-              key={index}
-              className={
-                item?.winMoney === 0
-                  ? "bg-warning"
-                  : item?.winnable
-                  ? "bg-primary"
-                  : "bg-success"
-              }
-            >
+            <tr key={index}>
               <td>{item?.gameName}</td>
               <td>{item?.turnNum}</td>
               <td>{moment(item?.addTime).format("DD-MM-YYYY hh:mm:ss")}</td>
@@ -70,7 +61,15 @@ const ListBet = (props) => {
                   renderText={(value) => <b>{value} vnđ</b>}
                 />
               </td>
-              <td>
+              <td
+                className={
+                  item?.winMoney === 0
+                    ? "text-warning"
+                    : item?.winnable
+                    ? "text-primary"
+                    : "text-success"
+                }
+              >
                 {item?.winMoney === 0
                   ? "Thua"
                   : item?.winnable

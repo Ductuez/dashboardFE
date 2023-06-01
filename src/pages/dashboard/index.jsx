@@ -14,6 +14,7 @@ import {
   choiThu,
 } from "../../action";
 import { xuLyLoginTk88, xuLyChoiThu } from "../../ultil/handler";
+import { NumericFormat } from "react-number-format";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -69,6 +70,9 @@ class Dashboard extends React.Component {
     const { userDetail } = this.props;
 
     const hasTokenBet88 = R.pathOr("", ["duLieu", "tokenBet"])(userDetail);
+    const money = R.pathOr("", ["duLieu", "money"])(userDetail);
+
+    console.log(userDetail);
 
     // const renderImageFromBase64 = () => {
     //   return (
@@ -84,8 +88,6 @@ class Dashboard extends React.Component {
       const passwordMD5 = MD5(this.state.form.password).toString();
       xuLyLoginTk88(this)({ ...this.state.form, password: passwordMD5 });
     };
-
-    console.log(this.state.form);
 
     const handleChange = (e) => {
       const { value, name } = e.target;
@@ -105,20 +107,17 @@ class Dashboard extends React.Component {
             <div className='widget  bg-light'>
               <Row className='row-table '>
                 <div className='margin-b-30'>
-                  <h2 className='margin-b-5'>Product</h2>
-                  <p className='text-muted'>Total Product</p>
+                  <h2 className='margin-b-5'>Money</h2>
+                  <p className='text-muted'>vnđ </p>
                   <span className='float-right text-primary widget-r-m'>
-                    37859
+                    <NumericFormat
+                      value={money}
+                      thousandSeparator=','
+                      displayType='text'
+                      renderText={(value) => <b>{value} </b>}
+                    />
                   </span>
                 </div>
-                <div className='progress margin-b-10  progress-mini'>
-                  <div
-                    style={{ width: "50%" }}
-                    className='progress-bar bg-primary'
-                  />
-                </div>
-                <p className='text-muted float-left margin-b-0'>Change</p>
-                <p className='text-muted float-right margin-b-0'>50%</p>
               </Row>
             </div>
           </Col>
@@ -132,14 +131,6 @@ class Dashboard extends React.Component {
                     1758
                   </span>
                 </div>
-                <div className='progress margin-b-10 progress-mini'>
-                  <div
-                    style={{ width: "45%" }}
-                    className='progress-bar bg-indigo'
-                  />
-                </div>
-                <p className='text-muted float-left margin-b-0'>Change</p>
-                <p className='text-muted float-right margin-b-0'>450%</p>
               </Row>
             </div>
           </Col>
@@ -153,14 +144,6 @@ class Dashboard extends React.Component {
                     1385
                   </span>
                 </div>
-                <div className='progress margin-b-10 progress-mini'>
-                  <div
-                    style={{ width: "85%" }}
-                    className='progress-bar bg-success'
-                  />
-                </div>
-                <p className='text-muted float-left margin-b-0'>Change</p>
-                <p className='text-muted float-right margin-b-0'>85%</p>
               </Row>
             </div>
           </Col>
@@ -174,14 +157,6 @@ class Dashboard extends React.Component {
                     98421
                   </span>
                 </div>
-                <div className='progress margin-b-10 progress-mini'>
-                  <div
-                    style={{ width: "38%" }}
-                    className='progress-bar bg-warning'
-                  />
-                </div>
-                <p className='text-muted float-left margin-b-0'>Change</p>
-                <p className='text-muted float-right margin-b-0'>38%</p>
               </Row>
             </div>
           </Col>

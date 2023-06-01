@@ -34,11 +34,15 @@ export const xuLyTaoBot = (self) => (duLieu) => {
 };
 
 export const xuLyStartBot = (self) => (duLieu) => {
-  const { startBot } = self.props;
+  const { startBot, dsBot } = self.props;
   const game = R.pathOr([], ["game"])(duLieu);
   const trangThai = R.pathOr(false, ["status"])(duLieu);
 
-  console.log(duLieu);
+  const duLieuDsBot = R.pathOr([], ["duLieu"])(dsBot);
+
+  const duLieuDsCheck = duLieuDsBot.filter((item) => {
+    return item.status === true;
+  });
 
   async function callAPIsSequentially() {
     for (let i = 0; i < game.length; i++) {
@@ -50,9 +54,31 @@ export const xuLyStartBot = (self) => (duLieu) => {
         console.error("Lỗi khi gọi API:", error.message);
       }
     }
+
+    toast("Bot đã được khởi động", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   }
 
-  trangThai
+  !R.isEmpty(duLieuDsCheck)
+    ? toast("Có 1 Bot đang được chạy", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      })
+    : trangThai
     ? toast("Bot đang được chạy !!", {
         position: "top-right",
         autoClose: 5000,

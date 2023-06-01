@@ -11,8 +11,6 @@ const socket = io(API_TX.baseURL);
 function Layout(props) {
   const { userDetail, children } = props;
 
-  console.log(socket);
-
   useEffect(() => {
     const { userProfile } = props;
     userProfile().then((result) => {
