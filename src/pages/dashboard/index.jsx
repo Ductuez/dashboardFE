@@ -67,12 +67,18 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    const { userDetail } = this.props;
+    const { userDetail, dsBot, dsBet } = this.props;
 
     const hasTokenBet88 = R.pathOr("", ["duLieu", "tokenBet"])(userDetail);
     const money = R.pathOr("", ["duLieu", "money"])(userDetail);
+    const tongThangThua = R.pathOr(0, ["duLieu", "other", "rewardRebate"])(
+      dsBet
+    );
 
-    console.log(userDetail);
+    const BotDangHoatDong = R.compose(
+      R.find((item) => item.status === true),
+      R.pathOr([], ["duLieu"])
+    )(dsBot);
 
     // const renderImageFromBase64 = () => {
     //   return (
@@ -125,10 +131,10 @@ class Dashboard extends React.Component {
             <div className='widget  bg-light'>
               <Row className='row-table '>
                 <div className='margin-b-30'>
-                  <h2 className='margin-b-5'>Sales</h2>
-                  <p className='text-muted'>Total Sales</p>
+                  <h2 className='margin-b-5'>Win/Lose</h2>
+                  <p className='text-muted'>Count</p>
                   <span className='float-right text-indigo widget-r-m'>
-                    1758
+                    {BotDangHoatDong?.winCount} / {BotDangHoatDong?.loseCount}
                   </span>
                 </div>
               </Row>
@@ -138,10 +144,15 @@ class Dashboard extends React.Component {
             <div className='widget  bg-light'>
               <Row className='row-table '>
                 <div className='margin-b-30'>
-                  <h2 className='margin-b-5'>Orders</h2>
-                  <p className='text-muted'>Total Orders</p>
+                  <h2 className='margin-b-5'>Lãi Bot đang chạy</h2>
+                  <p className='text-muted'>Vnđ</p>
                   <span className='float-right text-success widget-r-m'>
-                    1385
+                    <NumericFormat
+                      value={BotDangHoatDong?.moneyWin || 0}
+                      thousandSeparator=','
+                      displayType='text'
+                      renderText={(value) => <b>{value} </b>}
+                    />
                   </span>
                 </div>
               </Row>
@@ -151,10 +162,15 @@ class Dashboard extends React.Component {
             <div className='widget  bg-light'>
               <Row className='row-table '>
                 <div className='margin-b-30'>
-                  <h2 className='margin-b-5'>Visitors</h2>
-                  <p className='text-muted'>Total Visitors</p>
+                  <h2 className='margin-b-5'>Lãi ngày</h2>
+                  <p className='text-muted'>Vnd</p>
                   <span className='float-right text-warning widget-r-m'>
-                    98421
+                    <NumericFormat
+                      value={tongThangThua || 0}
+                      thousandSeparator=','
+                      displayType='text'
+                      renderText={(value) => <b>{value} </b>}
+                    />
                   </span>
                 </div>
               </Row>
@@ -173,25 +189,25 @@ class Dashboard extends React.Component {
                 <div id='donut' />
                 <ul className='list-1 list-group'>
                   <li className='list-group-item'>
-                    Desktop{" "}
+                    Desktop
                     <span className='float-right text-indigo'>
                       <i className='fa fa-arrow-up' /> 45.0%
                     </span>
                   </li>
                   <li className='list-group-item'>
-                    Mobile{" "}
+                    Mobile
                     <span className='float-right text-primary'>
                       <i className='fa fa-minus' /> 25.0%
                     </span>
                   </li>
                   <li className='list-group-item'>
-                    Tablet{" "}
+                    Tablet
                     <span className='float-right text-teal'>
                       <i className='fa fa-arrow-down' /> 15.0%
                     </span>
                   </li>
                   <li className='list-group-item'>
-                    Other{" "}
+                    Other
                     <span className='float-right text-muted'>
                       <i className='fa fa-arrow-up' /> 15.0%
                     </span>

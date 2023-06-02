@@ -184,6 +184,9 @@ const CardBot = (props) => {
                         }}
                       />
                     </Col>
+
+                    <Col xs={12}>OKE</Col>
+                    <Col xs={12}>OKE1</Col>
                   </>
                 );
               })}

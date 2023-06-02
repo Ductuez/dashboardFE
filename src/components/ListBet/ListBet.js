@@ -12,7 +12,7 @@ const ListBet = (props) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       listDsBet();
-    }, 30000);
+    }, 15000);
 
     return () => clearInterval(intervalId);
   }, [listDsBet]);
