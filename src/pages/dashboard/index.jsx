@@ -12,8 +12,9 @@ import {
   userProfile,
   truyCapLogintk88,
   choiThu,
+  capNhatToken88,
 } from "../../action";
-import { xuLyLoginTk88, xuLyChoiThu } from "../../ultil/handler";
+import { xuLyLoginTk88, xuLyToken88 } from "../../ultil/handler";
 import { NumericFormat } from "react-number-format";
 
 class Dashboard extends React.Component {
@@ -93,6 +94,11 @@ class Dashboard extends React.Component {
       e.preventDefault();
       const passwordMD5 = MD5(this.state.form.password).toString();
       xuLyLoginTk88(this)({ ...this.state.form, password: passwordMD5 });
+    };
+
+    const xuLyNoiBoToken88 = (e) => {
+      e.preventDefault();
+      xuLyToken88(this)(this.state.form.token88);
     };
 
     const handleChange = (e) => {
@@ -217,70 +223,86 @@ class Dashboard extends React.Component {
             </Card>
           </Col>
           {!hasTokenBet88 && (
-            <Col md='8'>
-              <Card>
-                <Card.Header>Tài khoản Tk88</Card.Header>
-                <Card.Body>
-                  <Form>
-                    <Form.Group className='row'>
-                      <Form.Label htmlFor='inputEmail3' className='col-sm-2 '>
-                        Username
-                      </Form.Label>
-                      <Col sm='10'>
-                        <Form.Control
-                          placeholder='Email'
-                          onChange={handleChange}
-                          name='account'
-                        />
-                      </Col>
-                    </Form.Group>
-                    <Form.Group className='row'>
-                      <Form.Label htmlFor='inputEmail3' className='col-sm-2 '>
-                        Password
-                      </Form.Label>
-                      <Col sm='10'>
-                        <Form.Control
-                          type='password'
-                          placeholder='Password'
-                          className='Form-control'
-                          onChange={handleChange}
-                          name='password'
-                        />
-                      </Col>
-                    </Form.Group>
+            <>
+              <Col xs='8'>
+                <Card>
+                  <Card.Header>Tài khoản Tk88</Card.Header>
+                  <Card.Body>
+                    <Form validated>
+                      <Form.Group className='row'>
+                        <Form.Label htmlFor='inputEmail3' className='col-sm-2 '>
+                          Username
+                        </Form.Label>
+                        <Col sm='10'>
+                          <Form.Control
+                            placeholder='Email'
+                            onChange={handleChange}
+                            name='account'
+                            required
+                          />
+                        </Col>
+                      </Form.Group>
+                      <Form.Group className='row'>
+                        <Form.Label htmlFor='inputEmail3' className='col-sm-2 '>
+                          Password
+                        </Form.Label>
+                        <Col sm='10'>
+                          <Form.Control
+                            type='password'
+                            placeholder='Password'
+                            className='Form-control'
+                            onChange={handleChange}
+                            name='password'
+                            required
+                          />
+                        </Col>
+                      </Form.Group>
 
-                    {/* <Form.Group className='row '>
-                    <Form.Label className='col-sm-2 '>Mã xác nhận</Form.Label>
-                    <Col sm='10'>
-                      <Form.Control
-                        type='text'
-                        placeholder='validcod'
-                        className='Form-control'
-                        onChange={handleChange}
-                        name='validCode'
-                      />
-                    </Col>
-                  </Form.Group>
-                  <Form.Group className='row '>
-                    <Col sm='10'>{renderImageFromBase64()}</Col>
-                  </Form.Group> */}
-                    <Button
-                      type='submit'
-                      className='btn-sm'
-                      onClick={(e) => xuLyNoiBoLogin(e)}
-                    >
-                      Đăng nhập
-                    </Button>
-                    <Button
-                      className='btn-sm'
-                      onClick={(e) => xuLyChoiThu(this)(e)}
-                    >
-                      Chơi thử
-                    </Button>
-                  </Form>
-                </Card.Body>
-              </Card>
-            </Col>
+                      <Button
+                        type='submit'
+                        className='btn-sm mr-2'
+                        onClick={(e) => xuLyNoiBoLogin(e)}
+                      >
+                        Đăng nhập
+                      </Button>
+                    </Form>
+                  </Card.Body>
+                </Card>
+              </Col>
+
+              {!hasTokenBet88 && (
+                <Col xs='8'>
+                  <Card>
+                    <Card.Header>Token 88</Card.Header>
+                    <Card.Body>
+                      <Form validated>
+                        <Form.Group className='row'>
+                          <Form.Label className='col-sm-2 '>
+                            Token 88
+                          </Form.Label>
+                          <Col sm='10'>
+                            <Form.Control
+                              placeholder='Vui lòng nhập Token88'
+                              onChange={handleChange}
+                              name='token88'
+                              required
+                            />
+                          </Col>
+                        </Form.Group>
+
+                        <Button
+                          type='submit'
+                          className='btn-sm mr-2'
+                          onClick={(e) => xuLyNoiBoToken88(e)}
+                        >
+                          Submit
+                        </Button>
+                      </Form>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              )}
+            </>
           )}
         </Row>
       </React.Fragment>
@@ -297,6 +319,7 @@ const mapDispatchToProps = {
   userProfile,
   truyCapLogintk88,
   choiThu,
+  capNhatToken88,
 };
 
 export default connect(

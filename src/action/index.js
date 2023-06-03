@@ -11,3 +11,4 @@ export { xoaBot } from "../redux/xoaBot";
 export { dangKy } from "../redux/dangKy";
 export { dangXuat } from "../redux/dangXuat";
 export { ngungBot } from "../redux/ngungBot";
+export { capNhatToken88 } from "../redux/capNhatToken88";

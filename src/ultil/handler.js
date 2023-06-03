@@ -141,3 +141,15 @@ export const xuLyNgungBot = (self) => (duLieu) => {
     toast("Bot đã được dừng !!");
   });
 };
+
+export const xuLyToken88 = (self) => (duLieu) => {
+  const { capNhatToken88 } = self.props;
+  capNhatToken88({ tokenBet: duLieu }).then((result) => {
+    console.log(result);
+    if (!result.status) {
+      toast(result.message);
+    } else {
+      toast("Cập nhật thành công");
+    }
+  });
+};

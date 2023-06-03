@@ -119,20 +119,6 @@ const CardBot = (props) => {
             </Col>
           </Form.Group>
 
-          <Form.Group className='row'>
-            <Form.Label className='col-sm-3 '>Phương pháp đánh</Form.Label>
-            <Col sm='9'>
-              <Form.Control
-                as='select'
-                className='m-b'
-                {...register("phuongPhap")}
-              >
-                <option>Random</option>
-                <option>Tuỳ chỉnh</option>
-              </Form.Control>
-            </Col>
-          </Form.Group>
-
           <Form.Group className='c-card-bot-xo-so'>
             <Form.Label>Chọn Xổ số</Form.Label>
             <Row>
@@ -185,8 +171,28 @@ const CardBot = (props) => {
                       />
                     </Col>
 
-                    <Col xs={12}>OKE</Col>
-                    <Col xs={12}>OKE1</Col>
+                    <Col xs={4} />
+
+                    <Col xs={4}>
+                      <Form.Group className='d-flex'>
+                        <Form.Label>Phương thức</Form.Label>
+                        <Form.Control
+                          placeholder='150000'
+                          name='phuong_thuc'
+                          {...register("phuong_thuc")}
+                        />
+                      </Form.Group>
+                    </Col>
+                    <Col xs={4}>
+                      <Form.Group className='d-flex'>
+                        <Form.Label>Phương thức</Form.Label>
+                        <Form.Control
+                          placeholder='150000'
+                          name='phuong_thuc'
+                          {...register("phuong_thuc")}
+                        />
+                      </Form.Group>
+                    </Col>
                   </>
                 );
               })}
