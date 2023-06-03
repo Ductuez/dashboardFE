@@ -9,8 +9,8 @@ export const headers = {
 };
 
 export const API_TX = {
-  baseURL: `http://localhost:3200/`,
-  // baseURL: `https://tool-tx.herokuapp.com/`,
+  // baseURL: `http://localhost:3200/`,
+  baseURL: `https://tool-tx.herokuapp.com/`,
 
   headers: {
     Authorization: "",
